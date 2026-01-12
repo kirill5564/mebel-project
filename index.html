@@ -206,7 +206,7 @@
             margin-top: 20px;
         }
         
-        /* Стили для прихожей - УНИВЕРСАЛЬНОЕ РЕШЕНИЕ */
+        /* Стили для прихожей */
         .hallway-container {
             padding: 15px;
             background: #f5f5f5;
@@ -241,16 +241,6 @@
             height: 280px;
         }
         
-        .hallway-single {
-            width: 100%;
-            max-width: 320px;
-            height: 280px;
-            object-fit: contain;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
         /* Обеденная группа - карусели увеличены */
         .section:nth-child(3) .carousel {
             height: 250px;
@@ -260,6 +250,16 @@
             background-color: #f5f5f5;
         }
         
+        /* Кухня - стили для вариантов */
+        .kitchen-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
         .highlight {
             background-color: #fff9e6;
             padding: 20px;
@@ -267,17 +267,7 @@
             margin-top: 20px;
             border-left: 5px solid #f1c40f;
         }
-        .image-placeholder {
-            background: #ddd;
-            height: 200px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            margin: 20px 0;
-            font-size: 1.1rem;
-        }
+        
         footer {
             text-align: center;
             padding: 30px;
@@ -319,11 +309,11 @@
                 height: 200px !important;
                 margin-bottom: 10px;
             }
-            .hallway-single {
-                height: 220px;
-            }
             .section:nth-child(3) .carousel {
                 height: 220px;
+            }
+            .kitchen-photo {
+                height: 200px;
             }
         }
     </style>
@@ -618,16 +608,24 @@
                     </div>
                 </div>
 
-                <!-- Вариант 3 - ОДНО ВЕРТИКАЛЬНОЕ фото -->
+                <!-- Вариант 3 - ДВЕ ФОТО (оригинал + дубликат из варианта 1) -->
                 <div class="variant-card">
                     <div class="hallway-container">
-                        <img src="images/прихожая/44418_charli-prikhozhaya-s-yaschikami-.jpg" 
-                             alt="Прихожая Вариант 3" 
-                             class="hallway-single">
+                        <div class="hallway-double">
+                            <img src="images/прихожая/44418_charli-prikhozhaya-s-yaschikami-.jpg" 
+                                 alt="Прихожая Вариант 3 - основная фото" 
+                                 class="hallway-photo"
+                                 data-orientation="vertical">
+                            <img src="images/прихожая/49231_prikhozhaya-4-olga-milk.jpg" 
+                                 alt="Прихожая Вариант 3 - дополнительное фото" 
+                                 class="hallway-photo"
+                                 data-orientation="vertical">
+                        </div>
                     </div>
                     <div class="variant-content">
                         <h3>Вариант 3</h3>
                         <p>Комплект: 900×2205×356 мм (Ш×В×Г)</p>
+                        <p><small>Вторая фотография демонстрирует пример другой конфигурации</small></p>
                     </div>
                 </div>
             </div>
@@ -645,7 +643,36 @@
                 <li>Мойка из искусственного камня, смеситель</li>
                 <li>Сушилка, лоток для столовых приборов</li>
             </ul>
-            <div class="image-placeholder">📷 Фото кухонного гарнитура</div>
+            
+            <!-- Три варианта кухни -->
+            <div class="variant-grid" style="margin-top: 30px;">
+                <!-- Вариант 1 -->
+                <div class="variant-card">
+                    <img src="images/кухни/WhatsApp Image 2025-12-02 at 13.40.06.jpeg" alt="Кухня Вариант 1" class="kitchen-photo">
+                    <div class="variant-content">
+                        <h3>Вариант 1</h3>
+                        <p>Кухонный гарнитур с белыми фасадами и деревянными элементами</p>
+                    </div>
+                </div>
+                
+                <!-- Вариант 2 -->
+                <div class="variant-card">
+                    <img src="images/кухни/WhatsApp Image 2025-12-02 at 12.36.07.jpeg" alt="Кухня Вариант 2" class="kitchen-photo">
+                    <div class="variant-content">
+                        <h3>Вариант 2</h3>
+                        <p>Кухонный гарнитур в классическом стиле с темными фасадами</p>
+                    </div>
+                </div>
+                
+                <!-- Вариант 3 -->
+                <div class="variant-card">
+                    <img src="images/кухни/WhatsApp Image 2025-12-02 at 13.40.03.jpeg" alt="Кухня Вариант 3" class="kitchen-photo">
+                    <div class="variant-content">
+                        <h3>Вариант 3</h3>
+                        <p>Современный кухонный гарнитур с глянцевыми фасадами</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Итог -->

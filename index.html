@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugel Mebel | Профессиональная комплектация квартир</title>
+    <title>Мебель и стиль | Профессиональная комплектация квартир</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2a5c8b;
-            --primary-light: #4a7cab;
-            --accent: #e6a23c;
+            --primary: #1a3b2e;
+            --primary-light: #2a5a45;
+            --accent: #d4b68a;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
@@ -94,7 +94,7 @@
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: white;
+            color: var(--dark);
             padding: 15px 30px;
             border-radius: var(--radius);
             text-decoration: none;
@@ -106,7 +106,7 @@
         }
 
         .btn:hover {
-            background-color: #d8922e;
+            background-color: #c4a074;
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
@@ -141,6 +141,7 @@
 
         body.dark-theme .theme-toggle {
             background-color: var(--accent);
+            color: var(--dark);
         }
 
         /* Шапка */
@@ -270,13 +271,13 @@
         /* Герой с текстом */
         .hero {
             padding: 60px 0 40px;
-            background: linear-gradient(135deg, #f0f4f8 0%, #e1e8f0 100%);
+            background: linear-gradient(135deg, #e8f0e8 0%, #d0e0d0 100%);
             position: relative;
             transition: background 0.3s;
         }
 
         body.dark-theme .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: var(--bg-dark);
         }
 
         .hero-content {
@@ -309,35 +310,16 @@
             color: var(--text-secondary-dark);
         }
 
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .hero-feature i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
-        /* Карусель как на moderndwelldecor.ru */
+        /* Карусель */
         .carousel-section {
             padding: 40px 0 60px;
-            background: linear-gradient(135deg, #f0f4f8 0%, #e1e8f0 100%);
+            background: linear-gradient(135deg, #e8f0e8 0%, #d0e0d0 100%);
             transition: background 0.3s;
             position: relative;
         }
 
         body.dark-theme .carousel-section {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: var(--bg-dark);
         }
 
         .carousel-container {
@@ -366,7 +348,7 @@
         }
 
         .carousel-slide {
-            flex: 0 0 calc(70% - 10px); /* Занимает 70% ширины контейнера */
+            flex: 0 0 calc(70% - 10px);
             transform: scale(0.9);
             opacity: 0.5;
             transition: all 0.5s ease;
@@ -392,7 +374,6 @@
             border-radius: var(--radius);
         }
 
-        /* Затемнение левого края для эффекта глубины */
         .carousel-container::before {
             content: '';
             position: absolute;
@@ -442,6 +423,11 @@
             transform: translateY(-50%) scale(1.1);
         }
 
+        body.dark-theme .carousel-button:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
         .carousel-button.prev {
             left: 40px;
         }
@@ -480,73 +466,64 @@
             background-color: var(--accent);
         }
 
-        /* Преимущества */
-        .benefits {
+        /* Блок с картинкой и текстом вместо преимуществ */
+        .about-block {
             background-color: var(--light);
             transition: background-color 0.3s;
+            padding: 80px 0;
         }
 
-        body.dark-theme .benefits {
-            background-color: #1a1a1a;
+        body.dark-theme .about-block {
+            background-color: var(--bg-dark);
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 40px 25px;
-            border-radius: var(--radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        body.dark-theme .benefit-card {
-            background: var(--bg-card-dark);
-            color: var(--text-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(42, 92, 139, 0.1);
-            border-radius: 50%;
+        .about-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: var(--primary);
-            font-size: 1.8rem;
-            transition: background-color 0.3s;
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
-        body.dark-theme .benefit-icon {
-            background-color: rgba(230, 162, 60, 0.1);
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .about-text h3 {
             color: var(--accent);
         }
 
-        .benefit-card h3 {
+        .about-text p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
             transition: color 0.3s;
         }
 
-        body.dark-theme .benefit-card h3 {
-            color: white;
-        }
-
-        .benefit-card p {
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .benefit-card p {
+        body.dark-theme .about-text p {
             color: var(--text-secondary-dark);
         }
 
@@ -669,7 +646,7 @@
 
         .tag {
             padding: 5px 12px;
-            background-color: rgba(42, 92, 139, 0.1);
+            background-color: rgba(26, 59, 46, 0.1);
             border-radius: 15px;
             font-size: 0.85rem;
             color: var(--primary);
@@ -677,7 +654,7 @@
         }
 
         body.dark-theme .tag {
-            background-color: rgba(230, 162, 60, 0.1);
+            background-color: rgba(212, 182, 138, 0.1);
             color: var(--accent);
         }
 
@@ -688,7 +665,7 @@
         }
 
         body.dark-theme .styles {
-            background-color: #1a1a1a;
+            background-color: var(--bg-dark);
         }
 
         .styles-container {
@@ -772,6 +749,7 @@
 
         body.dark-theme .style-icon {
             background-color: var(--accent);
+            color: var(--dark);
         }
 
         .style-header h3 {
@@ -827,91 +805,9 @@
             color: var(--text-dark);
         }
 
-        /* Партнеры */
-        .partners {
-            background-color: var(--light);
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme .partners {
-            background-color: #1a1a1a;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .partner-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        body.dark-theme .partner-card {
-            background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .partner-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .partner-logo {
-            width: 100px;
-            height: 100px;
-            background-color: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: var(--primary);
-            font-weight: 700;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.dark-theme .partner-logo {
-            background-color: rgba(230, 162, 60, 0.1);
-            color: var(--accent);
-        }
-
-        .partner-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary);
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .partner-name {
-            color: var(--accent);
-        }
-
-        .partner-desc {
-            color: var(--gray);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .partner-desc {
-            color: var(--text-secondary-dark);
-        }
-
         /* Этапы работы */
         .steps {
-            background-color: white;
+            background-color: var(--light);
             transition: background-color 0.3s;
         }
 
@@ -948,6 +844,7 @@
 
         body.dark-theme .step-number {
             background-color: var(--accent);
+            color: var(--dark);
         }
 
         .step-content h3 {
@@ -977,12 +874,12 @@
 
         /* Пакеты */
         .packages {
-            background-color: var(--light);
+            background-color: white;
             transition: background-color 0.3s;
         }
 
         body.dark-theme .packages {
-            background-color: #1a1a1a;
+            background-color: var(--bg-dark);
         }
 
         .package-tabs {
@@ -1097,69 +994,86 @@
             margin-bottom: 25px;
         }
 
-        /* Вопросы */
-        .faq {
-            background-color: white;
+        /* Партнеры */
+        .partners {
+            background-color: var(--light);
             transition: background-color 0.3s;
         }
 
-        body.dark-theme .faq {
+        body.dark-theme .partners {
             background-color: var(--bg-dark);
         }
 
-        .faq-container {
-            max-width: 800px;
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid var(--light-gray);
+        .partner-card {
+            background: white;
             border-radius: var(--radius);
-            overflow: hidden;
-            transition: border-color 0.3s;
-        }
-
-        body.dark-theme .faq-item {
-            border-color: var(--border-dark);
-        }
-
-        .faq-question {
-            padding: 20px;
-            background-color: var(--light);
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            transition: background-color 0.3s, color 0.3s;
         }
 
-        body.dark-theme .faq-question {
-            background-color: var(--bg-card-dark);
-            color: var(--text-dark);
+        body.dark-theme .partner-card {
+            background: var(--bg-card-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        .partner-card:hover {
+            transform: translateY(-10px);
         }
 
-        .faq-answer p {
-            padding: 20px 0;
-            color: var(--gray);
+        .partner-logo {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .partner-logo {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .partner-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
             transition: color 0.3s;
         }
 
-        body.dark-theme .faq-answer p {
-            color: var(--text-secondary-dark);
+        body.dark-theme .partner-name {
+            color: var(--accent);
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 300px;
+        .partner-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .partner-desc {
+            color: var(--text-secondary-dark);
         }
 
         /* Контакты */
@@ -1259,7 +1173,7 @@
             font-size: 0.9rem;
         }
 
-        /* Адаптивность для карусели */
+        /* Адаптивность */
         @media (max-width: 1400px) {
             .carousel-slide {
                 flex: 0 0 calc(75% - 10px);
@@ -1291,6 +1205,10 @@
             .carousel-button.next {
                 right: 20px;
             }
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1317,11 +1235,6 @@
             }
             .hero-content h2 {
                 font-size: 2rem;
-            }
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
             }
             .carousel-slide {
                 flex: 0 0 calc(90% - 10px);
@@ -1387,9 +1300,9 @@
     <!-- Шапка -->
     <header>
         <div class="container header-container">
-            <div class="logo-mini">HG</div>
+            <div class="logo-mini">МиС</div>
             <ul class="nav">
-                <li><a href="#benefits">Преимущества</a></li>
+                <li><a href="#about">О нас</a></li>
                 <li><a href="#portfolio">Наши работы</a></li>
                 <li><a href="#styles">Стили</a></li>
                 <li><a href="#steps">Этапы</a></li>
@@ -1406,46 +1319,13 @@
     <!-- Полный логотип под шапкой с разделителем -->
     <div class="full-logo">
         <div class="container">
-            <h1>HUGEL MEBEL</h1>
+            <h1>МЕБЕЛЬ И СТИЛЬ</h1>
             <div class="logo-divider"></div>
             <div class="subtitle">Меблировка под ключ</div>
         </div>
     </div>
 
-    <!-- Герой с текстом -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Создаем среду, которая отражает вашу индивидуальность</h2>
-                <p>Полный цикл меблировки квартир под ключ. От проекта до финальной уборки с гарантией 2 года.</p>
-                
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Фиксированная смета</span>
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Гарантия 2 года</span>
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Работаем по всей РФ</span>
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>150+ поставщиков</span>
-                    </div>
-                </div>
-
-                <a href="#contact" class="btn" style="margin-top: 30px;">
-                    Рассчитать стоимость <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Карусель -->
+    <!-- КАРУСЕЛЬ -->
     <section class="carousel-section">
         <div class="carousel-container">
             <div class="carousel-wrapper" id="carouselWrapper">
@@ -1465,41 +1345,32 @@
         </div>
     </section>
 
-    <!-- Преимущества -->
-    <section class="benefits" id="benefits">
+    <!-- Герой с текстом -->
+    <section class="hero" id="hero">
         <div class="container">
-            <div class="section-title">
-                <h2>Наши преимущества</h2>
-                <p>Почему собственники и риелторы доверяют нам комплектацию объектов</p>
+            <div class="hero-content">
+                <h2>Готовое решение, которое отражает вашу индивидуальность</h2>
+                <p>Полный цикл меблировки под ключ. Мы с вами от дизайн-проекта до реализации.</p>
+                
+                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="margin-top: 30px;" target="_blank">
+                    Рассчитать стоимость <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Работа по договору</h3>
-                    <p>Все этапы официально закреплены в договоре. Предоставляем полную финансовую отчётность и чеки.</p>
+        </div>
+    </section>
+
+    <!-- Блок с картинкой и текстом (вместо преимуществ) -->
+    <section class="about-block" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="image/photo_5233431171193051302_y.jpg" alt="О нас">
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-truck-loading"></i>
-                    </div>
-                    <h3>Логистика под ключ</h3>
-                    <p>Организуем доставку от всех поставщиков, приёмку, проверку и подъём мебели. Вы экономите время.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Персональный менеджер</h3>
-                    <p>Ваш специалист сопровождает проект от первого звонка до передачи ключей от обставленной квартиры.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Гарантия 2 года</h3>
-                    <p>Гарантируем качество сборки и материалов. Решаем любые вопросы в течение гарантийного срока.</p>
+                <div class="about-text">
+                    <h3>Мы предлагаем профессиональную подготовку вашего объекта недвижимости под любые цели</h3>
+                    <p>Создаем уникальные интерьеры, которые отражают ваш вкус и стиль жизни. Каждый проект — это индивидуальный подход, внимание к деталям и безупречное качество.</p>
+                    <p>Работаем с проверенными поставщиками и материалами, чтобы результат радовал вас долгие годы. От концепции до финальной уборки — мы берем на себя все заботы по обустройству вашего пространства.</p>
+                    <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" target="_blank">Обсудить проект</a>
                 </div>
             </div>
         </div>
@@ -1524,7 +1395,6 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="scandinavian">
                     <div class="portfolio-img">
-                        <!-- Здесь должно быть реальное изображение -->
                         <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #a5d8ff, #74c0fc); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
                             <i class="fas fa-couch"></i>
                         </div>
@@ -1783,46 +1653,6 @@
         </div>
     </section>
 
-    <!-- Партнеры -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши партнеры</h2>
-                <p>Работаем с проверенными производителями мебели и материалов</p>
-            </div>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        ДВ
-                    </div>
-                    <div class="partner-name">Дерево Вологды</div>
-                    <p class="partner-desc">Мебель из массива сосны и дуба. Экологичные материалы, традиционное качество.</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        СТ
-                    </div>
-                    <div class="partner-name">СтильТех</div>
-                    <p class="partner-desc">Современные кухни и системы хранения. Инновационные решения, европейские технологии.</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        ФК
-                    </div>
-                    <div class="partner-name">Фабрика Комфорта</div>
-                    <p class="partner-desc">Диваны и кресла для гостиных. Оптимальное соотношение цены и качества.</p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo">
-                        МС
-                    </div>
-                    <div class="partner-name">МеталлСтиль</div>
-                    <p class="partner-desc">Лофт-мебель и индустриальные решения. Прочность, долговечность, характер.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Этапы работы -->
     <section class="steps" id="steps">
         <div class="container">
@@ -1907,7 +1737,7 @@
                         <div class="feature"><i class="fas fa-check"></i> Шкаф 2-створчатый распашной</div>
                         <div class="feature"><i class="fas fa-check"></i> Базовая встраиваемая техника</div>
                         <div class="feature"><i class="fas fa-check"></i> Доставка, сборка, клининг</div>
-                        <a href="#contact" class="btn" style="width: 100%;">Выбрать пакет</a>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
                     </div>
                 </div>
                 <div class="package-card" style="border: 2px solid var(--accent);">
@@ -1922,7 +1752,7 @@
                         <div class="feature"><i class="fas fa-check"></i> Кровать с изголовьем + 2 тумбы</div>
                         <div class="feature"><i class="fas fa-check"></i> Шкаф-купе 4-створчатый</div>
                         <div class="feature"><i class="fas fa-check"></i> Встраиваемая посудомоечная машина</div>
-                        <a href="#contact" class="btn" style="width: 100%; background-color: var(--accent);">Выбрать пакет</a>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
                     </div>
                 </div>
                 <div class="package-card">
@@ -1936,56 +1766,48 @@
                         <div class="feature"><i class="fas fa-check"></i> Дизайнерский декор и текстиль</div>
                         <div class="feature"><i class="fas fa-check"></i> Расширенная кухня с островом</div>
                         <div class="feature"><i class="fas fa-check"></i> Зона отдыха на балконе</div>
-                        <a href="#contact" class="btn" style="width: 100%;">Выбрать пакет</a>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Вопросы -->
-    <section class="faq" id="faq">
+    <!-- Партнеры -->
+    <section class="partners" id="partners">
         <div class="container">
             <div class="section-title">
-                <h2>Частые вопросы</h2>
-                <p>Ответы на самые популярные вопросы от наших клиентов</p>
+                <h2>Наши партнеры</h2>
+                <p>Работаем с проверенными производителями мебели и материалов</p>
             </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Сколько времени занимает комплектация?
-                        <i class="fas fa-chevron-down"></i>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        ДВ
                     </div>
-                    <div class="faq-answer">
-                        <p>В среднем, комплектация студии или 1-комнатной квартиры «под ключ» занимает 3-4 недели, при условии выбора мебели из наличия в магазинах. Сроки могут увеличиться при изготовлении кухни или другой мебели на заказ.</p>
-                    </div>
+                    <div class="partner-name">Дерево Вологды</div>
+                    <p class="partner-desc">Мебель из массива сосны и дуба. Экологичные материалы, традиционное качество.</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Вы работаете только в Санкт-Петербурге?
-                        <i class="fas fa-chevron-down"></i>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        СТ
                     </div>
-                    <div class="faq-answer">
-                        <p>Наши объекты находятся в Санкт-Петербурге. Если вы — собственник из другого города, мы можем работать удалённо. Главное — передать нам ключи от квартиры.</p>
-                    </div>
+                    <div class="partner-name">СтильТех</div>
+                    <p class="partner-desc">Современные кухни и системы хранения. Инновационные решения, европейские технологии.</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Как я могу контролировать процесс?
-                        <i class="fas fa-chevron-down"></i>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        ФК
                     </div>
-                    <div class="faq-answer">
-                        <p>Мы предоставляем фото и видео отчёты на всех этапах работ. Также вы можете связаться с вашим персональным менеджером в любое время для получения актуальной информации.</p>
-                    </div>
+                    <div class="partner-name">Фабрика Комфорта</div>
+                    <p class="partner-desc">Диваны и кресла для гостиных. Оптимальное соотношение цены и качества.</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Есть ли у вас скидки при комплексном заказе?
-                        <i class="fas fa-chevron-down"></i>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        МС
                     </div>
-                    <div class="faq-answer">
-                        <p>Да, при заказе комплектации нескольких объектов или при заказе премиум-пакета мы предоставляем дополнительные скидки. Точные условия обсуждаются индивидуально.</p>
-                    </div>
+                    <div class="partner-name">МеталлСтиль</div>
+                    <p class="partner-desc">Лофт-мебель и индустриальные решения. Прочность, долговечность, характер.</p>
                 </div>
             </div>
         </div>
@@ -1996,10 +1818,10 @@
         <div class="container">
             <div class="section-title">
                 <h2>Свяжитесь с нами</h2>
-                <p>Получите бесплатную консультацию и расчёт стоимости вашего проекта</p>
+                <p>Если у вас остались вопросы, будем рады вам помочь!</p>
             </div>
-            <a href="tel:+78129258856" class="btn" style="background-color: white; color: var(--primary); font-size: 1.2rem; padding: 18px 40px;">
-                <i class="fas fa-phone"></i> Позвонить +7 (812) 925 88-56
+            <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="background-color: white; color: var(--dark); font-size: 1.2rem; padding: 18px 40px;" target="_blank">
+                <i class="fab fa-vk"></i> Написать в ВК
             </a>
             <div class="contact-info">
                 <div class="contact-item">
@@ -2008,7 +1830,7 @@
                     </div>
                     <div>
                         <div style="font-weight: 600;">Адрес</div>
-                        <div>г. Санкт-Петербург</div>
+                        <div>г. Кудрово, ул. Промышленная, д. 3, этаж 2</div>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -2026,7 +1848,7 @@
                     </div>
                     <div>
                         <div style="font-weight: 600;">Email</div>
-                        <div>info@hugelmebel.ru</div>
+                        <div>brwmebelspb@yandex.ru</div>
                     </div>
                 </div>
             </div>
@@ -2038,30 +1860,30 @@
         <div class="container">
             <div class="footer-container">
                 <div>
-                    <div class="footer-logo">Hugel Mebel</div>
+                    <div class="footer-logo">Мебель и стиль</div>
                     <p>Профессиональная меблировка квартир под ключ. Работаем в Санкт-Петербурге с 2015 года.</p>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px;">Разделы</h3>
                     <ul>
-                        <li><a href="#benefits">Преимущества</a></li>
+                        <li><a href="#about">О нас</a></li>
                         <li><a href="#portfolio">Наши работы</a></li>
                         <li><a href="#styles">Стили мебели</a></li>
                         <li><a href="#packages">Пакеты</a></li>
-                        <li><a href="#faq">Вопросы и ответы</a></li>
+                        <li><a href="#partners">Партнеры</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 style="color: white; margin-bottom: 20px;">Контакты</h3>
                     <ul>
                         <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+7 (812) 925 88-56</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>info@hugelmebel.ru</li>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>г. Санкт-Петербург</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>brwmebelspb@yandex.ru</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>г. Кудрово, ул. Промышленная, д. 3, этаж 2</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                © 2026 Hugel Mebel. Все права защищены.
+                © 2026 Мебель и стиль. Все права защищены.
             </div>
         </div>
     </footer>
@@ -2115,13 +1937,12 @@
             slide.className = 'carousel-slide';
             slide.setAttribute('data-index', index);
             
-            // Создаем изображение с fallback
             const imgElement = document.createElement('img');
             imgElement.src = img.src;
             imgElement.alt = img.alt;
             imgElement.onerror = function() {
                 this.src = 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22' + 
-                    (index === 0 ? '%232a5c8b' : index === 1 ? '%23e6a23c' : '%234a7cab') + 
+                    (index === 0 ? '%231a3b2e' : index === 1 ? '%23d4b68a' : '%232a5a45') + 
                     '%22/><text x=%2250%22 y=%2250%22 font-size=%2214%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22>' + 
                     img.src + '</text></svg>';
             };
@@ -2170,10 +1991,9 @@
                 track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
             }
             
-            const slideWidth = slides[0].offsetWidth + 20; // ширина + gap
+            const slideWidth = slides[0].offsetWidth + 20;
             const wrapperWidth = wrapper.offsetWidth;
             
-            // Смещаем так, чтобы текущий слайд был по центру
             const offset = (currentIndex * slideWidth) - (wrapperWidth / 2 - slides[0].offsetWidth / 2);
             
             track.style.transform = `translateX(-${Math.max(0, offset)}px)`;
@@ -2181,12 +2001,11 @@
             updateActiveSlide();
         }
 
-        // Обработчики для кнопок
         prevBtn.addEventListener('click', () => {
             if (currentIndex > 0) {
                 currentIndex--;
             } else {
-                currentIndex = slides.length - 1; // циклическая прокрутка
+                currentIndex = slides.length - 1;
             }
             updateCarousel();
         });
@@ -2195,12 +2014,11 @@
             if (currentIndex < slides.length - 1) {
                 currentIndex++;
             } else {
-                currentIndex = 0; // циклическая прокрутка
+                currentIndex = 0;
             }
             updateCarousel();
         });
 
-        // Обработчики для точек
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index;
@@ -2208,7 +2026,6 @@
             });
         });
 
-        // Drag-to-scroll с плавной остановкой
         wrapper.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.pageX;
@@ -2238,7 +2055,6 @@
             
             const newOffset = dragStartOffset - diff;
             
-            // Ограничиваем смещение, чтобы нельзя было уехать слишком далеко
             const maxOffset = (slides.length - 1) * (slides[0].offsetWidth + 20);
             const minOffset = 0;
             
@@ -2255,37 +2071,30 @@
             track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
             wrapper.style.cursor = 'grab';
             
-            const slideWidth = slides[0].offsetWidth + 20;
-            
-            // Определяем, нужно ли переключить слайд
             if (Math.abs(dragDistance) > 80 || dragSpeed > 0.3) {
                 if (dragDistance > 0 && currentIndex > 0) {
                     currentIndex--;
                 } else if (dragDistance < 0 && currentIndex < slides.length - 1) {
                     currentIndex++;
                 } else if (dragDistance > 0 && currentIndex === 0) {
-                    currentIndex = slides.length - 1; // циклическая прокрутка
+                    currentIndex = slides.length - 1;
                 } else if (dragDistance < 0 && currentIndex === slides.length - 1) {
-                    currentIndex = 0; // циклическая прокрутка
+                    currentIndex = 0;
                 }
             }
             
-            // Плавно центрируем текущий слайд
             updateCarousel();
             dragDistance = 0;
         });
 
-        // Обработка ресайза окна
         window.addEventListener('resize', () => {
             updateCarousel(false);
         });
 
-        // Инициализация
         setTimeout(() => {
             updateCarousel(false);
         }, 100);
 
-        // Плавная прокрутка для якорей
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2301,15 +2110,6 @@
             });
         });
 
-        // FAQ аккордеон
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const parent = item.parentNode;
-                parent.classList.toggle('active');
-            });
-        });
-
-        // Фильтрация портфолио
         const filterButtons = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         
@@ -2338,7 +2138,6 @@
             });
         });
 
-        // Переключение стилей мебели
         const styleTabs = document.querySelectorAll('.style-tab');
         const styleContents = document.querySelectorAll('.style-content');
         
@@ -2352,7 +2151,6 @@
             });
         });
 
-        // Переключение пакетов
         const packageTabs = document.querySelectorAll('.package-tab');
         packageTabs.forEach(tab => {
             tab.addEventListener('click', function() {
@@ -2361,7 +2159,6 @@
             });
         });
 
-        // Анимация портфолио
         portfolioItems.forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';

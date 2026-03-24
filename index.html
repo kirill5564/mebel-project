@@ -168,15 +168,36 @@
         }
 
         .logo-mini {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .logo-mini .logo-main {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
-            text-decoration: none;
             transition: color 0.3s;
         }
 
-        body.dark-theme .logo-mini {
+        body.dark-theme .logo-mini .logo-main {
             color: var(--accent);
+        }
+
+        .logo-mini .logo-sub {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .logo-mini .logo-sub {
+            color: var(--text-secondary-dark);
         }
 
         .nav {
@@ -207,6 +228,12 @@
             color: var(--accent);
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .phone {
             font-weight: 700;
             color: var(--primary);
@@ -216,6 +243,26 @@
 
         body.dark-theme .phone {
             color: var(--accent);
+        }
+
+        .header-btn {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .header-btn:hover {
+            background-color: #c4a074;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
         /* Полный логотип под шапкой с разделителем */
@@ -287,18 +334,18 @@
         }
 
         .hero-content h2 {
-            font-size: 3rem;
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.3;
             transition: color 0.3s;
         }
 
         body.dark-theme .hero-content h2 {
-            color: white;
+            color: var(--accent);
         }
 
-        .hero-content p {
+        .hero-content .hero-subtitle {
             font-size: 1.2rem;
             color: var(--gray);
             margin-bottom: 30px;
@@ -306,8 +353,20 @@
             transition: color 0.3s;
         }
 
-        body.dark-theme .hero-content p {
+        body.dark-theme .hero-content .hero-subtitle {
             color: var(--text-secondary-dark);
+        }
+
+        .hero-content .hero-text {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 30px 0 20px;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .hero-content .hero-text {
+            color: var(--accent);
         }
 
         /* Карусель */
@@ -505,7 +564,8 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 20px;
             transition: color 0.3s;
@@ -605,28 +665,22 @@
         .style-icon {
             width: 60px;
             height: 60px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-right: 20px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
 
-        body.dark-theme .style-icon {
-            background-color: var(--accent);
-            color: var(--dark);
+        .style-icon i {
+            transition: color 0.3s ease;
         }
 
         .style-header h3 {
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .style-header h3 {
-            color: white;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
         }
 
         .style-header p {
@@ -662,8 +716,7 @@
         }
 
         .style-feature i {
-            color: var(--accent);
-            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
         .style-feature span {
@@ -932,6 +985,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            position: relative;
         }
 
         body.dark-theme .package-card {
@@ -1224,8 +1278,11 @@
             .nav li {
                 margin: 0 10px 10px;
             }
+            .header-right {
+                margin-top: 10px;
+            }
             .phone {
-                margin-bottom: 10px;
+                margin-bottom: 0;
             }
             .full-logo h1 {
                 font-size: 2.5rem;
@@ -1234,7 +1291,10 @@
                 font-size: 1rem;
             }
             .hero-content h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+            .hero-content .hero-text {
+                font-size: 1.6rem;
             }
             .carousel-slide {
                 flex: 0 0 calc(90% - 10px);
@@ -1266,7 +1326,10 @@
                 font-size: 2rem;
             }
             .hero-content h2 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+            }
+            .hero-content .hero-text {
+                font-size: 1.4rem;
             }
             .carousel-slide {
                 flex: 0 0 calc(95% - 5px);
@@ -1300,7 +1363,10 @@
     <!-- Шапка -->
     <header>
         <div class="container header-container">
-            <div class="logo-mini">МиС</div>
+            <a href="#home" class="logo-mini">
+                <div class="logo-main">МиС</div>
+                <div class="logo-sub">Мебель и Стиль</div>
+            </a>
             <ul class="nav">
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#styles">Стили</a></li>
@@ -1310,8 +1376,11 @@
                 <li><a href="#partners">Партнеры</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
-            <div class="phone">
-                <i class="fas fa-phone"></i> +7 (812) 925 88-56
+            <div class="header-right">
+                <div class="phone">
+                    <i class="fas fa-phone"></i> +7 (812) 925 88-56
+                </div>
+                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="header-btn" target="_blank">Заказать</a>
             </div>
         </div>
     </header>
@@ -1319,7 +1388,7 @@
     <!-- Полный логотип под шапкой с разделителем -->
     <div class="full-logo">
         <div class="container">
-            <h1>МЕБЕЛЬ И СТИЛЬ</h1>
+            <h1>МЕБЕЛЬ и СТИЛЬ</h1>
             <div class="logo-divider"></div>
             <div class="subtitle">Меблировка под ключ</div>
         </div>
@@ -1352,10 +1421,12 @@
                 <h2>Готовое решение, которое отражает вашу индивидуальность</h2>
                 
                 <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="margin-bottom: 30px;" target="_blank">
-                    Рассчитать стоимость <i class="fas fa-arrow-right"></i>
+                    Рассчитать стоимость
                 </a>
                 
-                <p>Полный цикл меблировки под ключ. Мы с вами от дизайн-проекта до реализации.</p>
+                <div class="hero-subtitle">Полный цикл меблировки под ключ. Мы с вами от дизайн-проекта до реализации.</div>
+                
+                <div class="hero-text">Выбирая компанию для меблировки под ключ, вы делаете инвестицию в комфорт и уют вашей недвижимости.</div>
             </div>
         </div>
     </section>
@@ -1378,7 +1449,7 @@
         </div>
     </section>
 
-    <!-- Стили мебели (теперь перед портфолио) -->
+    <!-- Стили мебели -->
     <section class="styles" id="styles">
         <div class="container">
             <div class="section-title">
@@ -1396,11 +1467,11 @@
                 
                 <div class="style-content active" id="scandinavian">
                     <div class="style-header">
-                        <div class="style-icon">
-                            <i class="fas fa-sun"></i>
+                        <div class="style-icon" data-style="scandinavian" style="background: rgba(107, 140, 92, 0.15);">
+                            <i class="fas fa-leaf" style="color: #8bb56a;"></i>
                         </div>
                         <div>
-                            <h3>Скандинавский стиль</h3>
+                            <h3 style="color: #8bb56a;">Скандинавский стиль</h3>
                             <p>Идеален для сдачи в аренду и быстрой продажи</p>
                         </div>
                     </div>
@@ -1410,19 +1481,19 @@
                     </p>
                     <div class="style-features">
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #8bb56a;"></i>
                             <span>Светлые тона (белый, серый, бежевый)</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #8bb56a;"></i>
                             <span>Мебель из массива дерева</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #8bb56a;"></i>
                             <span>Минималистичный текстиль</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #8bb56a;"></i>
                             <span>Функциональное хранение</span>
                         </div>
                     </div>
@@ -1430,11 +1501,11 @@
                 
                 <div class="style-content" id="modern">
                     <div class="style-header">
-                        <div class="style-icon">
-                            <i class="fas fa-city"></i>
+                        <div class="style-icon" data-style="modern" style="background: rgba(90, 125, 154, 0.15);">
+                            <i class="fas fa-cubes" style="color: #6c9ebf;"></i>
                         </div>
                         <div>
-                            <h3>Современный стиль</h3>
+                            <h3 style="color: #6c9ebf;">Современный стиль</h3>
                             <p>Универсальное решение для жизни и инвестиций</p>
                         </div>
                     </div>
@@ -1444,19 +1515,19 @@
                     </p>
                     <div class="style-features">
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
                             <span>Нейтральная цветовая гамма</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
                             <span>Модульные системы хранения</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
                             <span>Встраиваемая техника</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
                             <span>Умные решения для дома</span>
                         </div>
                     </div>
@@ -1464,11 +1535,11 @@
                 
                 <div class="style-content" id="loft">
                     <div class="style-header">
-                        <div class="style-icon">
-                            <i class="fas fa-industry"></i>
+                        <div class="style-icon" data-style="loft" style="background: rgba(184, 111, 80, 0.15);">
+                            <i class="fas fa-industry" style="color: #cd8a62;"></i>
                         </div>
                         <div>
-                            <h3>Лофт</h3>
+                            <h3 style="color: #cd8a62;">Лофт</h3>
                             <p>Для креативных пространств и коммерческой недвижимости</p>
                         </div>
                     </div>
@@ -1478,19 +1549,19 @@
                     </p>
                     <div class="style-features">
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #cd8a62;"></i>
                             <span>Индустриальные материалы</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #cd8a62;"></i>
                             <span>Многофункциональная мебель</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #cd8a62;"></i>
                             <span>Акцентное освещение</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #cd8a62;"></i>
                             <span>Открытые системы хранения</span>
                         </div>
                     </div>
@@ -1498,11 +1569,11 @@
                 
                 <div class="style-content" id="classic">
                     <div class="style-header">
-                        <div class="style-icon">
-                            <i class="fas fa-gem"></i>
+                        <div class="style-icon" data-style="classic" style="background: rgba(155, 107, 107, 0.15);">
+                            <i class="fas fa-crown" style="color: #b88b8b;"></i>
                         </div>
                         <div>
-                            <h3>Неоклассика</h3>
+                            <h3 style="color: #b88b8b;">Неоклассика</h3>
                             <p>Премиум-решение для элитной недвижимости</p>
                         </div>
                     </div>
@@ -1512,19 +1583,19 @@
                     </p>
                     <div class="style-features">
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #b88b8b;"></i>
                             <span>Натуральные материалы (дерево, мрамор)</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #b88b8b;"></i>
                             <span>Элегантная цветовая палитра</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #b88b8b;"></i>
                             <span>Качественная фурнитура</span>
                         </div>
                         <div class="style-feature">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check" style="color: #b88b8b;"></i>
                             <span>Декоративные элементы</span>
                         </div>
                     </div>
@@ -1715,7 +1786,7 @@
         </div>
     </section>
 
-    <!-- Пакеты -->
+    <!-- Пакеты - обновленные -->
     <section class="packages" id="packages">
         <div class="container">
             <div class="section-title">
@@ -1725,12 +1796,11 @@
             <div class="package-tabs">
                 <button class="package-tab active" data-tab="studio">Студия</button>
                 <button class="package-tab" data-tab="1-room">1-комнатная</button>
-                <button class="package-tab" data-tab="2-room">2-комнатная</button>
             </div>
             <div class="packages-grid">
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-name">Базовый</h3>
+                        <h3 class="package-name">Стандарт</h3>
                         <div class="package-price">от 450 000 ₽</div>
                     </div>
                     <div class="package-features">
@@ -1744,31 +1814,16 @@
                 </div>
                 <div class="package-card" style="border: 2px solid var(--accent);">
                     <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <div style="position: absolute; top: -12px; background: var(--accent); color: var(--dark); padding: 5px 20px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">ПОПУЛЯРНЫЙ</div>
                         <h3 class="package-name">Комфорт</h3>
                         <div class="package-price">от 650 000 ₽</div>
                     </div>
                     <div class="package-features">
-                        <div class="feature"><i class="fas fa-check"></i> Всё из пакета «Базовый»</div>
+                        <div class="feature"><i class="fas fa-check"></i> Всё из пакета «Стандарт»</div>
                         <div class="feature"><i class="fas fa-check"></i> Кухня: модули 900 мм, доводчики</div>
                         <div class="feature"><i class="fas fa-check"></i> Кровать с изголовьем + 2 тумбы</div>
                         <div class="feature"><i class="fas fa-check"></i> Шкаф-купе 4-створчатый</div>
                         <div class="feature"><i class="fas fa-check"></i> Встраиваемая посудомоечная машина</div>
                         <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
-                    </div>
-                </div>
-                <div class="package-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Премиум</h3>
-                        <div class="package-price">от 950 000 ₽</div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature"><i class="fas fa-check"></i> Всё из пакета «Комфорт»</div>
-                        <div class="feature"><i class="fas fa-check"></i> Кухня: двухъярусные модули</div>
-                        <div class="feature"><i class="fas fa-check"></i> Дизайнерский декор и текстиль</div>
-                        <div class="feature"><i class="fas fa-check"></i> Расширенная кухня с островом</div>
-                        <div class="feature"><i class="fas fa-check"></i> Зона отдыха на балконе</div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
                     </div>
                 </div>
             </div>
@@ -1917,12 +1972,14 @@
             }
         });
 
-        // Данные для карусели (обновленные фотографии)
+        // Данные для карусели с переставленными слайдами
+        // Было: 1,2,3,4,5
+        // Стало: 1,3,4,2,5 (2-й слайд перемещён на 4-е место)
         const images = [
             { src: 'image/photo_5296549619733042398_y (1).jpg', alt: 'Интерьер 1' },
-            { src: 'image/photo_5296549619733042393_y.jpg', alt: 'Интерьер 2' },
             { src: 'image/photo_5296549619733042394_y (1).jpg', alt: 'Интерьер 3' },
             { src: 'image/photo_5296549619733042395_y.jpg', alt: 'Интерьер 4' },
+            { src: 'image/photo_5296549619733042393_y.jpg', alt: 'Интерьер 2' },
             { src: 'image/photo_5296549619733042397_y.jpg', alt: 'Интерьер 5' }
         ];
 

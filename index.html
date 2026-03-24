@@ -333,22 +333,23 @@
             margin: 0 auto;
         }
 
-        .hero-content h2 {
+        .hero-content .hero-title {
             font-size: 2rem;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             line-height: 1.3;
             transition: color 0.3s;
         }
 
-        body.dark-theme .hero-content h2 {
+        body.dark-theme .hero-content .hero-title {
             color: var(--accent);
         }
 
         .hero-content .hero-subtitle {
             font-size: 1.2rem;
             color: var(--gray);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             line-height: 1.6;
             transition: color 0.3s;
         }
@@ -359,6 +360,7 @@
 
         .hero-content .hero-text {
             font-size: 2rem;
+            font-weight: 700;
             color: var(--primary);
             margin: 30px 0 20px;
             line-height: 1.3;
@@ -563,15 +565,16 @@
             min-width: 300px;
         }
 
-        .about-text h3 {
-            font-size: 1.5rem;
+        .about-text .about-bold {
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 20px;
+            line-height: 1.4;
             transition: color 0.3s;
         }
 
-        body.dark-theme .about-text h3 {
+        body.dark-theme .about-text .about-bold {
             color: var(--accent);
         }
 
@@ -1290,7 +1293,7 @@
             .full-logo .subtitle {
                 font-size: 1rem;
             }
-            .hero-content h2 {
+            .hero-content .hero-title {
                 font-size: 1.6rem;
             }
             .hero-content .hero-text {
@@ -1325,7 +1328,7 @@
             .full-logo h1 {
                 font-size: 2rem;
             }
-            .hero-content h2 {
+            .hero-content .hero-title {
                 font-size: 1.4rem;
             }
             .hero-content .hero-text {
@@ -1418,13 +1421,13 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Готовое решение, которое отражает вашу индивидуальность</h2>
-                
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="margin-bottom: 30px;" target="_blank">
-                    Рассчитать стоимость
-                </a>
+                <div class="hero-title">Готовое решение, которое отражает вашу индивидуальность</div>
                 
                 <div class="hero-subtitle">Полный цикл меблировки под ключ. Мы с вами от дизайн-проекта до реализации.</div>
+                
+                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="margin: 20px 0 30px;" target="_blank">
+                    Рассчитать стоимость
+                </a>
                 
                 <div class="hero-text">Выбирая компанию для меблировки под ключ, вы делаете инвестицию в комфорт и уют вашей недвижимости.</div>
             </div>
@@ -1439,7 +1442,7 @@
                     <img src="image/photo_5233431171193051302_y.jpg" alt="О нас">
                 </div>
                 <div class="about-text">
-                    <h3>Мы предлагаем профессиональную подготовку вашего объекта недвижимости под любые цели.</h3>
+                    <div class="about-bold">Мы предлагаем профессиональную подготовку вашего объекта недвижимости под любые цели.</div>
                     <p>Создаем уникальные интерьеры, которые отражают ваш вкус и стиль жизни. Каждый проект — это индивидуальный подход, внимание к деталям и безупречное качество.</p>
                     <p>Работаем с проверенными поставщиками и материалами, чтобы результат радовал вас долгие годы. Плюсом в реализации проекта с нашей компанией будет возможность вживую увидеть предлагаемый ассортимент в одном из наших салонов.</p>
                     <p>Мы берем на себя все заботы по обустройству вашего пространства - к своей работе подходим ответственно, к каждому проекту с душой и любовью.</p>
@@ -1786,7 +1789,7 @@
         </div>
     </section>
 
-    <!-- Пакеты - обновленные -->
+    <!-- Пакеты -->
     <section class="packages" id="packages">
         <div class="container">
             <div class="section-title">
@@ -1973,8 +1976,6 @@
         });
 
         // Данные для карусели с переставленными слайдами
-        // Было: 1,2,3,4,5
-        // Стало: 1,3,4,2,5 (2-й слайд перемещён на 4-е место)
         const images = [
             { src: 'image/photo_5296549619733042398_y (1).jpg', alt: 'Интерьер 1' },
             { src: 'image/photo_5296549619733042394_y (1).jpg', alt: 'Интерьер 3' },

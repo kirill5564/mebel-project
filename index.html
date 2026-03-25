@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мебель и стиль | Профессиональная комплектация квартир</title>
+    <title>Мебель и Стиль | Профессиональная комплектация квартир</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -156,8 +156,7 @@
         }
 
         body.dark-theme header {
-            background-color: var(--primary);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #1a3b2e, #2a5a45);
         }
 
         .header-container {
@@ -234,14 +233,19 @@
             gap: 20px;
         }
 
-        .phone {
+        .phone a {
             font-weight: 700;
             color: white;
             font-size: 1.1rem;
             transition: color 0.3s;
+            text-decoration: none;
         }
 
-        body.dark-theme .phone {
+        body.dark-theme .phone a {
+            color: var(--text-dark);
+        }
+
+        .phone a:hover {
             color: var(--accent);
         }
 
@@ -259,11 +263,20 @@
             text-align: center;
         }
 
+        body.dark-theme .header-btn {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
         .header-btn:hover {
             background-color: var(--accent);
             color: var(--dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
+        }
+
+        body.dark-theme .header-btn:hover {
+            background-color: #c4a074;
         }
 
         /* Полный логотип под шапкой с разделителем */
@@ -756,12 +769,16 @@
             min-width: 300px;
         }
 
-        .steps-image {
+        .steps-right {
             flex: 1;
             min-width: 300px;
+        }
+
+        .steps-image {
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            margin-bottom: 25px;
         }
 
         .steps-image img {
@@ -769,6 +786,28 @@
             height: auto;
             display: block;
             object-fit: cover;
+        }
+
+        .steps-note {
+            padding: 0;
+            border: none;
+            background: none;
+        }
+
+        .steps-note p {
+            color: var(--dark);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .steps-note p {
+            color: var(--text-secondary-dark);
+        }
+
+        .steps-note p:last-child {
+            margin-bottom: 0;
         }
 
         .steps-content .step-intro {
@@ -800,7 +839,7 @@
         }
 
         .steps-content .step-item p {
-            color: var(--dark);
+            color: var(--gray);
             font-size: 1rem;
             line-height: 1.6;
             transition: color 0.3s;
@@ -808,21 +847,6 @@
 
         body.dark-theme .steps-content .step-item p {
             color: var(--text-secondary-dark);
-        }
-
-        .steps-content .step-note {
-            color: var(--dark);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--light-gray);
-            transition: color 0.3s, border-color 0.3s;
-        }
-
-        body.dark-theme .steps-content .step-note {
-            color: var(--text-secondary-dark);
-            border-top-color: var(--border-dark);
         }
 
         .steps-btn {
@@ -932,10 +956,6 @@
             flex: 1;
         }
 
-        .package-btn {
-            margin: 0 25px 25px 25px;
-        }
-
         .feature-section {
             margin-bottom: 20px;
         }
@@ -999,195 +1019,9 @@
             margin-right: 8px;
         }
 
-        /* Партнеры */
-        .partners {
-            background-color: white;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme .partners {
-            background-color: var(--bg-dark);
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .partner-card {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        body.dark-theme .partner-card {
-            background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .partner-card:hover {
-            transform: translateY(-10px);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .partner-logo {
-            width: 100px;
-            height: 100px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: white;
-            font-weight: 700;
-            transition: background-color 0.3s;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        body.dark-theme .partner-logo {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-
-        .partner-name {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary);
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .partner-name {
-            color: var(--accent);
-        }
-
-        .partner-desc {
-            color: var(--dark);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .partner-desc {
-            color: var(--text-secondary-dark);
-        }
-
-        /* Контакты */
-        .contact {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme .contact {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        }
-
-        .contact h2 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .contact .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-        }
-
-        /* Футер */
-        footer {
-            background-color: var(--dark);
-            color: rgba(255,255,255,0.7);
-            padding: 50px 0 30px;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme footer {
-            background-color: #0a0a0a;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .footer-container ul {
-            list-style: none;
-        }
-
-        .footer-container li {
-            margin-bottom: 10px;
-        }
-
-        .footer-container a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-container a:hover {
-            color: white;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-
-        /* НАШИ РАБОТЫ - теперь внизу */
+        /* НАШИ РАБОТЫ */
         .portfolio {
-            background-color: var(--light);
+            background-color: white;
             transition: background-color 0.3s;
         }
 
@@ -1287,7 +1121,7 @@
         }
 
         .portfolio-info p {
-            color: var(--dark);
+            color: var(--gray);
             margin-bottom: 15px;
             transition: color 0.3s;
         }
@@ -1314,6 +1148,200 @@
         body.dark-theme .tag {
             background-color: rgba(212, 182, 138, 0.1);
             color: var(--accent);
+        }
+
+        /* Партнеры */
+        .partners {
+            background-color: var(--light);
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .partners {
+            background-color: var(--bg-dark);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body.dark-theme .partner-card {
+            background: var(--bg-card-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-10px);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .partner-logo {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        body.dark-theme .partner-logo {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .partner-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .partner-name {
+            color: var(--accent);
+        }
+
+        .partner-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .partner-desc {
+            color: var(--text-secondary-dark);
+        }
+
+        /* Контакты */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .contact {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .contact .section-title p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Футер */
+        footer {
+            background-color: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 50px 0 30px;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme footer {
+            background-color: #0a0a0a;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-container ul {
+            list-style: none;
+        }
+
+        .footer-container li {
+            margin-bottom: 10px;
+        }
+
+        .footer-container a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-container a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
         }
 
         /* Адаптивность */
@@ -1379,9 +1407,6 @@
             .header-right {
                 margin-top: 10px;
             }
-            .phone {
-                margin-bottom: 0;
-            }
             .full-logo h1 {
                 font-size: 2.5rem;
             }
@@ -1407,6 +1432,10 @@
             }
             .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -1464,13 +1493,13 @@
                 <li><a href="#styles">Стили</a></li>
                 <li><a href="#steps">Этапы</a></li>
                 <li><a href="#packages">Пакеты</a></li>
-                <li><a href="#partners">Партнеры</a></li>
                 <li><a href="#portfolio">Наши работы</a></li>
+                <li><a href="#partners">Партнеры</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
             <div class="header-right">
                 <div class="phone">
-                    <i class="fas fa-phone"></i> +7 (812) 925 88-56
+                    <a href="tel:+78129258856"><i class="fas fa-phone"></i> +7 (812) 925 88-56</a>
                 </div>
                 <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="header-btn" target="_blank">Заказать</a>
             </div>
@@ -1734,11 +1763,13 @@
                         <p>Приемка объекта, подписание закрывающих документов, передача ключей.</p>
                     </div>
                 </div>
-                <div class="steps-image">
-                    <img src="image/IMG_8212.jpg" alt="Этапы работы">
-                    <div class="step-note" style="margin-top: 20px;">
-                        В среднем комплектация студии или 1-комнатной квартиры «под ключ» занимает 4 недели с учетом того, что все позиции мы выбираем из наличия в магазинах. В случае индивидуальных запросов на мебель или кухню на заказ сроки могут быть увеличены.<br><br>
-                        Все этапы согласовываем в удобном для Вас формате лично или дистанционно через любой комфортный мессенджер. Мы регулярно присылаем фото и видео отчеты и всегда находимся на связи.
+                <div class="steps-right">
+                    <div class="steps-image">
+                        <img src="image/IMG_8212.jpg" alt="Этапы работы">
+                    </div>
+                    <div class="steps-note">
+                        <p>В среднем комплектация студии или 1-комнатной квартиры «под ключ» занимает 4 недели с учетом того, что все позиции мы выбираем из наличия в магазинах. В случае индивидуальных запросов на мебель или кухню на заказ сроки могут быть увеличены.</p>
+                        <p>Все этапы согласовываем в удобном для Вас формате лично или дистанционно через любой комфортный мессенджер. Мы регулярно присылаем фото и видео отчеты и всегда находимся на связи.</p>
                     </div>
                 </div>
             </div>
@@ -1949,39 +1980,7 @@
         </div>
     </section>
 
-    <!-- Партнеры -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши партнеры</h2>
-                <p>Работаем с проверенными производителями мебели и материалов</p>
-            </div>
-            <div class="partners-grid">
-                <a href="https://brwmebelspb.ru/?ysclid=mn4gkzz20756438385" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_brw.png'); background-size: 60%; background-color: var(--primary);"></div>
-                    <div class="partner-name">БРВ Мебель</div>
-                    <p class="partner-desc">Белорусская мебель премиум-класса. Широкий ассортимент корпусной мебели, кухонь и спален.</p>
-                </a>
-                <a href="https://k2-mebel.ru/?ysclid=mn4glild0110478322" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_k2.png'); background-size: 70%; background-color: var(--primary);"></div>
-                    <div class="partner-name">K2 Мебель</div>
-                    <p class="partner-desc">Современная мебель для дома и офиса. Качественные материалы, стильный дизайн.</p>
-                </a>
-                <a href="https://mebel.com/catalog/kukhni?utm_medium=cpc&utm_source=yandex&utm_campaign=msk_5%7C707247173&utm_term=кухни%20виват&etext=" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_vivat.png'); background-size: 65%; background-color: var(--primary);"></div>
-                    <div class="partner-name">Мебель Виват</div>
-                    <p class="partner-desc">Кухни и мебель на заказ. Индивидуальные решения по доступным ценам.</p>
-                </a>
-                <a href="https://glazovmebel.ru/?ysclid=mn4gnp8vt7626168263" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_glazov.png'); background-size: 70%; background-color: var(--primary);"></div>
-                    <div class="partner-name">Глазов-мебель</div>
-                    <p class="partner-desc">Классическая и современная мебель. Традиции качества и надежности.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- НАШИ РАБОТЫ - теперь внизу -->
+    <!-- НАШИ РАБОТЫ -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
@@ -2103,6 +2102,38 @@
         </div>
     </section>
 
+    <!-- Партнеры -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши партнеры</h2>
+                <p>Работаем с проверенными производителями мебели и материалов</p>
+            </div>
+            <div class="partners-grid">
+                <a href="https://brwmebelspb.ru/?ysclid=mn4gkzz20756438385" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_brw.png'); background-size: 60%; background-color: var(--primary);"></div>
+                    <div class="partner-name">БРВ Мебель</div>
+                    <p class="partner-desc">Белорусская мебель премиум-класса. Широкий ассортимент корпусной мебели, кухонь и спален.</p>
+                </a>
+                <a href="https://k2-mebel.ru/?ysclid=mn4glild0110478322" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_k2.png'); background-size: 70%; background-color: var(--primary);"></div>
+                    <div class="partner-name">K2 Мебель</div>
+                    <p class="partner-desc">Современная мебель для дома и офиса. Качественные материалы, стильный дизайн.</p>
+                </a>
+                <a href="https://mebel.com/catalog/kukhni?utm_medium=cpc&utm_source=yandex&utm_campaign=msk_5%7C707247173&utm_term=кухни%20виват&etext=" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_vivat.png'); background-size: 65%; background-color: var(--primary);"></div>
+                    <div class="partner-name">Мебель Виват</div>
+                    <p class="partner-desc">Кухни и мебель на заказ. Индивидуальные решения по доступным ценам.</p>
+                </a>
+                <a href="https://glazovmebel.ru/?ysclid=mn4gnp8vt7626168263" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_glazov.png'); background-size: 70%; background-color: var(--primary);"></div>
+                    <div class="partner-name">Глазов-мебель</div>
+                    <p class="partner-desc">Классическая и современная мебель. Традиции качества и надежности.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Контакты -->
     <section class="contact" id="contact">
         <div class="container">
@@ -2110,9 +2141,14 @@
                 <h2>Свяжитесь с нами</h2>
                 <p>Если у вас остались вопросы, будем рады вам помочь!</p>
             </div>
-            <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="background-color: white; color: var(--dark); font-size: 1.2rem; padding: 18px 40px;" target="_blank">
-                <i class="fab fa-vk"></i> Написать в ВК
-            </a>
+            <div class="contact-buttons">
+                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="background-color: white; color: var(--dark);" target="_blank">
+                    <i class="fab fa-vk"></i> Написать в ВК
+                </a>
+                <a href="https://max.ru/join/W7gxOs43siqiPCKZs_VJU28PikM6qGhBeLToP__C91k" class="btn" style="background-color: white; color: var(--dark);" target="_blank">
+                    <i class="fab fa-max"></i> Написать в MAX
+                </a>
+            </div>
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">
@@ -2120,7 +2156,7 @@
                     </div>
                     <div>
                         <div style="font-weight: 600;">Адрес</div>
-                        <div>г. Кудрово, ул. Промышленная, д. 3, этаж 2</div>
+                        <div>г. Кудрово, ул. Промышленная, д. 3, к.3, этаж 2</div>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -2150,7 +2186,7 @@
         <div class="container">
             <div class="footer-container">
                 <div>
-                    <div class="footer-logo">Мебель и стиль</div>
+                    <div class="footer-logo">Мебель и Стиль</div>
                     <p>Профессиональная меблировка квартир под ключ. Работаем в Санкт-Петербурге с 2015 года.</p>
                 </div>
                 <div>
@@ -2160,8 +2196,8 @@
                         <li><a href="#styles">Стили мебели</a></li>
                         <li><a href="#steps">Этапы</a></li>
                         <li><a href="#packages">Пакеты</a></li>
-                        <li><a href="#partners">Партнеры</a></li>
                         <li><a href="#portfolio">Наши работы</a></li>
+                        <li><a href="#partners">Партнеры</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2169,12 +2205,12 @@
                     <ul>
                         <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+7 (812) 925 88-56</li>
                         <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>brwmebelspb@yandex.ru</li>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>г. Кудрово, ул. Промышленная, д. 3, этаж 2</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>г. Кудрово, ул. Промышленная, д. 3, к.3, этаж 2</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                © 2026 Мебель и стиль. Все права защищены.
+                © 2026 Мебель и Стиль. Все права защищены.
             </div>
         </div>
     </footer>

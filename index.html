@@ -146,7 +146,7 @@
 
         /* Шапка */
         header {
-            background-color: white;
+            background-color: var(--primary);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
@@ -156,7 +156,7 @@
         }
 
         body.dark-theme header {
-            background-color: var(--bg-card-dark);
+            background-color: var(--primary);
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
@@ -179,7 +179,7 @@
         .logo-mini .logo-main {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
+            color: white;
             transition: color 0.3s;
         }
 
@@ -190,7 +190,7 @@
         .logo-mini .logo-sub {
             font-size: 0.7rem;
             font-weight: 500;
-            color: var(--gray);
+            color: rgba(255,255,255,0.8);
             letter-spacing: 0.5px;
             margin-top: 0;
             transition: color 0.3s;
@@ -211,7 +211,7 @@
 
         .nav a {
             text-decoration: none;
-            color: var(--dark);
+            color: white;
             font-weight: 500;
             transition: var(--transition);
         }
@@ -221,7 +221,7 @@
         }
 
         .nav a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
         body.dark-theme .nav a:hover {
@@ -236,7 +236,7 @@
 
         .phone {
             font-weight: 700;
-            color: var(--primary);
+            color: white;
             font-size: 1.1rem;
             transition: color 0.3s;
         }
@@ -246,8 +246,8 @@
         }
 
         .header-btn {
-            background-color: var(--accent);
-            color: var(--dark);
+            background-color: white;
+            color: var(--primary);
             padding: 8px 20px;
             border-radius: var(--radius);
             text-decoration: none;
@@ -260,7 +260,8 @@
         }
 
         .header-btn:hover {
-            background-color: #c4a074;
+            background-color: var(--accent);
+            color: var(--dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
@@ -318,7 +319,7 @@
         /* Герой с текстом */
         .hero {
             padding: 60px 0 40px;
-            background: linear-gradient(135deg, #e8f0e8 0%, #d0e0d0 100%);
+            background: white;
             position: relative;
             transition: background 0.3s;
         }
@@ -374,7 +375,7 @@
         /* Карусель */
         .carousel-section {
             padding: 40px 0 60px;
-            background: linear-gradient(135deg, #e8f0e8 0%, #d0e0d0 100%);
+            background: white;
             transition: background 0.3s;
             position: relative;
         }
@@ -687,6 +688,7 @@
         }
 
         .style-header p {
+            color: var(--dark);
             transition: color 0.3s;
         }
 
@@ -695,7 +697,7 @@
         }
 
         .style-desc {
-            color: var(--gray);
+            color: var(--dark);
             line-height: 1.7;
             margin-bottom: 25px;
             transition: color 0.3s;
@@ -723,6 +725,7 @@
         }
 
         .style-feature span {
+            color: var(--dark);
             transition: color 0.3s;
         }
 
@@ -730,140 +733,9 @@
             color: var(--text-dark);
         }
 
-        /* НАШИ РАБОТЫ */
-        .portfolio {
-            background-color: white;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme .portfolio {
-            background-color: var(--bg-dark);
-        }
-
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 10px 25px;
-            background: none;
-            border: 2px solid var(--primary);
-            border-radius: 30px;
-            font-weight: 600;
-            color: var(--primary);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        body.dark-theme .filter-btn {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        body.dark-theme .filter-btn.active,
-        body.dark-theme .filter-btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-dark);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            background: white;
-        }
-
-        body.dark-theme .portfolio-item {
-            background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .portfolio-img {
-            height: 250px;
-            background-color: var(--light-gray);
-            overflow: hidden;
-        }
-
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-info {
-            padding: 25px;
-        }
-
-        .portfolio-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .portfolio-info h3 {
-            color: var(--accent);
-        }
-
-        .portfolio-info p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .portfolio-info p {
-            color: var(--text-secondary-dark);
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            padding: 5px 12px;
-            background-color: rgba(26, 59, 46, 0.1);
-            border-radius: 15px;
-            font-size: 0.85rem;
-            color: var(--primary);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.dark-theme .tag {
-            background-color: rgba(212, 182, 138, 0.1);
-            color: var(--accent);
-        }
-
         /* Этапы работы */
         .steps {
-            background-color: var(--light);
+            background-color: white;
             transition: background-color 0.3s;
         }
 
@@ -900,7 +772,7 @@
         }
 
         .steps-content .step-intro {
-            color: var(--gray);
+            color: var(--dark);
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 30px;
@@ -928,7 +800,7 @@
         }
 
         .steps-content .step-item p {
-            color: var(--gray);
+            color: var(--dark);
             font-size: 1rem;
             line-height: 1.6;
             transition: color 0.3s;
@@ -939,7 +811,7 @@
         }
 
         .steps-content .step-note {
-            color: var(--gray);
+            color: var(--dark);
             font-size: 1rem;
             line-height: 1.6;
             margin-top: 30px;
@@ -960,7 +832,7 @@
 
         /* Пакеты */
         .packages {
-            background-color: white;
+            background-color: var(--light);
             transition: background-color 0.3s;
         }
 
@@ -1019,6 +891,8 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         body.dark-theme .package-card {
@@ -1050,26 +924,16 @@
         .package-price {
             font-size: 1.8rem;
             font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .package-features {
             padding: 25px;
-            max-height: 500px;
-            overflow-y: auto;
+            flex: 1;
         }
 
-        .package-features::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .package-features::-webkit-scrollbar-track {
-            background: var(--light-gray);
-            border-radius: 5px;
-        }
-
-        .package-features::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 5px;
+        .package-btn {
+            margin: 0 25px 25px 25px;
         }
 
         .feature-section {
@@ -1108,7 +972,7 @@
         }
 
         .feature span {
-            color: var(--gray);
+            color: var(--dark);
             transition: color 0.3s;
         }
 
@@ -1135,9 +999,9 @@
             margin-right: 8px;
         }
 
-        /* Партнеры - обновленные */
+        /* Партнеры */
         .partners {
-            background-color: var(--light);
+            background-color: white;
             transition: background-color 0.3s;
         }
 
@@ -1154,7 +1018,7 @@
         }
 
         .partner-card {
-            background: white;
+            background: var(--light);
             border-radius: var(--radius);
             padding: 25px;
             text-align: center;
@@ -1214,7 +1078,7 @@
         }
 
         .partner-desc {
-            color: var(--gray);
+            color: var(--dark);
             font-size: 0.9rem;
             line-height: 1.5;
             transition: color 0.3s;
@@ -1319,6 +1183,137 @@
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
+        }
+
+        /* НАШИ РАБОТЫ - теперь внизу */
+        .portfolio {
+            background-color: var(--light);
+            transition: background-color 0.3s;
+        }
+
+        body.dark-theme .portfolio {
+            background-color: var(--bg-dark);
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: none;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        body.dark-theme .filter-btn {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        body.dark-theme .filter-btn.active,
+        body.dark-theme .filter-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: white;
+        }
+
+        body.dark-theme .portfolio-item {
+            background: var(--bg-card-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-img {
+            height: 250px;
+            background-color: var(--light-gray);
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 25px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .portfolio-info h3 {
+            color: var(--accent);
+        }
+
+        .portfolio-info p {
+            color: var(--dark);
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        body.dark-theme .portfolio-info p {
+            color: var(--text-secondary-dark);
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            background-color: rgba(26, 59, 46, 0.1);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-theme .tag {
+            background-color: rgba(212, 182, 138, 0.1);
+            color: var(--accent);
         }
 
         /* Адаптивность */
@@ -1467,10 +1462,10 @@
             <ul class="nav">
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#styles">Стили</a></li>
-                <li><a href="#portfolio">Наши работы</a></li>
                 <li><a href="#steps">Этапы</a></li>
                 <li><a href="#packages">Пакеты</a></li>
                 <li><a href="#partners">Партнеры</a></li>
+                <li><a href="#portfolio">Наши работы</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
             <div class="header-right">
@@ -1701,7 +1696,292 @@
         </div>
     </section>
 
-    <!-- НАШИ РАБОТЫ -->
+    <!-- Этапы работы -->
+    <section class="steps" id="steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Этапы взаимодействия</h2>
+                <p>Чёткий процесс, который гарантирует результат и соблюдение сроков.</p>
+            </div>
+            <div class="steps-container">
+                <div class="steps-content">
+                    <div class="step-intro">
+                        Меблировка под ключ — это современный подход к созданию интерьера, который позволяет сэкономить время и силы, доверив все этапы профессионалам. Одним из главных преимуществ этого решения является комплексный подход.
+                    </div>
+                    
+                    <div class="step-item">
+                        <h3>Знакомство</h3>
+                        <p>Анализ потребностей и особенностей помещения.</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h3>Разработка концепции и дизайн-проекта</h3>
+                        <p>На этом этапе создается визуализация будущего интерьера, что позволяет заранее увидеть, как будет выглядеть пространство. Включает в себя 3D проект, подбор мебели, техники и материалов, а также расстановку в вашу планировку по чистовому обмеру квартиры.</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h3>Заключение договора</h3>
+                        <p>Cогласование спецификации по ассортименту, подписание договора, предоплата 50% от стоимости проекта.</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h3>Реализация проекта</h3>
+                        <p>Изготовление, доставка и сборка мебели, оснащение техникой и ее подключение. Организация пространства, создание единого стилевого решения, финальное оформление и декорирование.</p>
+                    </div>
+                    
+                    <div class="step-item">
+                        <h3>Сдача объекта</h3>
+                        <p>Приемка объекта, подписание закрывающих документов, передача ключей.</p>
+                    </div>
+                </div>
+                <div class="steps-image">
+                    <img src="image/IMG_8212.jpg" alt="Этапы работы">
+                    <div class="step-note" style="margin-top: 20px;">
+                        В среднем комплектация студии или 1-комнатной квартиры «под ключ» занимает 4 недели с учетом того, что все позиции мы выбираем из наличия в магазинах. В случае индивидуальных запросов на мебель или кухню на заказ сроки могут быть увеличены.<br><br>
+                        Все этапы согласовываем в удобном для Вас формате лично или дистанционно через любой комфортный мессенджер. Мы регулярно присылаем фото и видео отчеты и всегда находимся на связи.
+                    </div>
+                </div>
+            </div>
+            <div class="steps-btn">
+                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" target="_blank">Заказать</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Пакеты -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Пакетные предложения</h2>
+                <p>Готовые решения для квартир с отделкой. Стоимость указана за базовую комплектацию.</p>
+            </div>
+            <div class="package-tabs">
+                <button class="package-tab active" data-tab="studio">Студия</button>
+                <button class="package-tab" data-tab="1-room">1-комнатная</button>
+            </div>
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Студия - Стандарт -->
+                <div class="package-card studio-package">
+                    <div class="package-header">
+                        <h3 class="package-name">Стандарт</h3>
+                        <div class="package-price">от 290 000 ₽</div>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-section">
+                            <h4>Кухня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Кухонный гарнитур прямой до 1800 мм</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка кухонная</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (2 комфорки)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Гостиная / Спальня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Диван еврокнижка</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стол прямоугольный обеденный</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Прихожая</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>В стоимость включены</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
+                        </div>
+                        <div class="feature-note">
+                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Студия - Комфорт -->
+                <div class="package-card studio-package" style="border: 2px solid var(--accent);">
+                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
+                        <h3 class="package-name">Комфорт</h3>
+                        <div class="package-price">от 450 000 ₽</div>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-section">
+                            <h4>Кухня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект кухни (цвет фасадов на выбор)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск. камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск. камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Гостиная / Спальня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Диван ортопедический (еврокнижка/аккордеон)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый (доводчики)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ (доводчики)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Прихожая</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей (на выбор)</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>В стоимость включены</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
+                        </div>
+                        <div class="feature-note">
+                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1-комнатная - Стандарт -->
+                <div class="package-card one-room-package" style="display: none;">
+                    <div class="package-header">
+                        <h3 class="package-name">Стандарт</h3>
+                        <div class="package-price">от 349 000 ₽</div>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-section">
+                            <h4>Кухня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Гостиная / Спальня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной /кровать + матрас</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Комод</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Прихожая</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, полкой для головных уборов и обувницей</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>В стоимость включены</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
+                        </div>
+                        <div class="feature-note">
+                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1-комнатная - Комфорт -->
+                <div class="package-card one-room-package" style="display: none; border: 2px solid var(--accent);">
+                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
+                        <h3 class="package-name">Комфорт</h3>
+                        <div class="package-price">от 525 000 ₽</div>
+                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature-section">
+                            <h4>Кухня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный (цвет модель на выбор)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Гостиная / Спальня</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв / тумба комбинированная (доводчики)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной ортопедический/кровать/кровать мягкая + матрас</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый (доводчики)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Комод (доводчики)</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>Прихожая</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая комбинированная/шкаф купе</span></div>
+                        </div>
+                        <div class="feature-section">
+                            <h4>В стоимость включены</h4>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
+                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
+                        </div>
+                        <div class="feature-note">
+                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Партнеры -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши партнеры</h2>
+                <p>Работаем с проверенными производителями мебели и материалов</p>
+            </div>
+            <div class="partners-grid">
+                <a href="https://brwmebelspb.ru/?ysclid=mn4gkzz20756438385" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_brw.png'); background-size: 60%; background-color: var(--primary);"></div>
+                    <div class="partner-name">БРВ Мебель</div>
+                    <p class="partner-desc">Белорусская мебель премиум-класса. Широкий ассортимент корпусной мебели, кухонь и спален.</p>
+                </a>
+                <a href="https://k2-mebel.ru/?ysclid=mn4glild0110478322" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_k2.png'); background-size: 70%; background-color: var(--primary);"></div>
+                    <div class="partner-name">K2 Мебель</div>
+                    <p class="partner-desc">Современная мебель для дома и офиса. Качественные материалы, стильный дизайн.</p>
+                </a>
+                <a href="https://mebel.com/catalog/kukhni?utm_medium=cpc&utm_source=yandex&utm_campaign=msk_5%7C707247173&utm_term=кухни%20виват&etext=" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_vivat.png'); background-size: 65%; background-color: var(--primary);"></div>
+                    <div class="partner-name">Мебель Виват</div>
+                    <p class="partner-desc">Кухни и мебель на заказ. Индивидуальные решения по доступным ценам.</p>
+                </a>
+                <a href="https://glazovmebel.ru/?ysclid=mn4gnp8vt7626168263" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo" style="background-image: url('image/logo_glazov.png'); background-size: 70%; background-color: var(--primary);"></div>
+                    <div class="partner-name">Глазов-мебель</div>
+                    <p class="partner-desc">Классическая и современная мебель. Традиции качества и надежности.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- НАШИ РАБОТЫ - теперь внизу -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
@@ -1823,292 +2103,6 @@
         </div>
     </section>
 
-    <!-- Этапы работы -->
-    <section class="steps" id="steps">
-        <div class="container">
-            <div class="section-title">
-                <h2>Этапы взаимодействия</h2>
-                <p>Чёткий процесс, который гарантирует результат и соблюдение сроков</p>
-            </div>
-            <div class="steps-container">
-                <div class="steps-content">
-                    <div class="step-intro">
-                        Меблировка под ключ — это современный подход к созданию интерьера, который позволяет сэкономить время и силы, доверив все этапы профессионалам. Одним из главных преимуществ этого решения является комплексный подход.
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Знакомство</h3>
-                        <p>Анализ потребностей и особенностей помещения.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Разработка концепции и дизайн-проекта</h3>
-                        <p>На этом этапе создается визуализация будущего интерьера, что позволяет заранее увидеть, как будет выглядеть пространство. Включает в себя 3D проект, подбор мебели, техники и материалов, а также расстановку в вашу планировку по чистовому обмеру квартиры.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Заключение договора</h3>
-                        <p>Cогласование спецификации по ассортименту, подписание договора, предоплата 50% от стоимости проекта.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Реализация проекта</h3>
-                        <p>Изготовление, доставка и сборка мебели, оснащение техникой и ее подключение. Организация пространства, создание единого стилевого решения, финальное оформление и декорирование.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Сдача объекта</h3>
-                        <p>Приемка объекта, подписание закрывающих документов, передача ключей.</p>
-                    </div>
-                    
-                    <div class="step-note">
-                        В среднем комплектация студии или 1-комнатной квартиры «под ключ» занимает 4 недели с учетом того, что все позиции мы выбираем из наличия в магазинах. В случае индивидуальных запросов на мебель или кухню на заказ сроки могут быть увеличены.<br><br>
-                        Все этапы согласовываем в удобном для Вас формате лично или дистанционно через любой комфортный мессенджер. Мы регулярно присылаем фото и видео отчеты и всегда находимся на связи.
-                    </div>
-                </div>
-                <div class="steps-image">
-                    <img src="image/IMG_8212.jpg" alt="Этапы работы">
-                </div>
-            </div>
-            <div class="steps-btn">
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" target="_blank">Заказать</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Пакеты -->
-    <section class="packages" id="packages">
-        <div class="container">
-            <div class="section-title">
-                <h2>Пакетные предложения</h2>
-                <p>Готовые решения для квартир с отделкой. Стоимость указана за базовую комплектацию.</p>
-            </div>
-            <div class="package-tabs">
-                <button class="package-tab active" data-tab="studio">Студия</button>
-                <button class="package-tab" data-tab="1-room">1-комнатная</button>
-            </div>
-            <div class="packages-grid" id="packagesGrid">
-                <!-- Студия - Стандарт -->
-                <div class="package-card studio-package">
-                    <div class="package-header">
-                        <h3 class="package-name">Стандарт</h3>
-                        <div class="package-price">от 290 000 ₽</div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Кухонный гарнитур прямой до 1800 мм</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка кухонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (2 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван еврокнижка</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол прямоугольный обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; margin-top: 20px;" target="_blank">Выбрать пакет</a>
-                    </div>
-                </div>
-
-                <!-- Студия - Комфорт -->
-                <div class="package-card studio-package" style="border: 2px solid var(--accent);">
-                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <h3 class="package-name">Комфорт</h3>
-                        <div class="package-price">от 450 000 ₽</div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект кухни (цвет фасадов на выбор)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск. камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск. камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван ортопедический (еврокнижка/аккордеон)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей (на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; margin-top: 20px; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
-                    </div>
-                </div>
-
-                <!-- 1-комнатная - Стандарт -->
-                <div class="package-card one-room-package" style="display: none;">
-                    <div class="package-header">
-                        <h3 class="package-name">Стандарт</h3>
-                        <div class="package-price">от 349 000 ₽</div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной /кровать + матрас</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, полкой для головных уборов и обувницей</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; margin-top: 20px;" target="_blank">Выбрать пакет</a>
-                    </div>
-                </div>
-
-                <!-- 1-комнатная - Комфорт -->
-                <div class="package-card one-room-package" style="display: none; border: 2px solid var(--accent);">
-                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <h3 class="package-name">Комфорт</h3>
-                        <div class="package-price">от 525 000 ₽</div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный (цвет модель на выбор)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв / тумба комбинированная (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной ортопедический/кровать/кровать мягкая + матрас</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая комбинированная/шкаф купе</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; margin-top: 20px; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Партнеры - обновленные с логотипами и ссылками -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши партнеры</h2>
-                <p>Работаем с проверенными производителями мебели и материалов</p>
-            </div>
-            <div class="partners-grid">
-                <a href="https://brwmebelspb.ru/?ysclid=mn4gkzz20756438385" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_brw.png'); background-size: 60%; background-color: var(--primary);"></div>
-                    <div class="partner-name">БРВ Мебель</div>
-                    <p class="partner-desc">Белорусская мебель премиум-класса. Широкий ассортимент корпусной мебели, кухонь и спален.</p>
-                </a>
-                <a href="https://k2-mebel.ru/?ysclid=mn4glild0110478322" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_k2.png'); background-size: 70%; background-color: var(--primary);"></div>
-                    <div class="partner-name">K2 Мебель</div>
-                    <p class="partner-desc">Современная мебель для дома и офиса. Качественные материалы, стильный дизайн.</p>
-                </a>
-                <a href="https://mebel.com/catalog/kukhni?utm_medium=cpc&utm_source=yandex&utm_campaign=msk_5%7C707247173&utm_term=кухни%20виват&etext=" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_vivat.png'); background-size: 65%; background-color: var(--primary);"></div>
-                    <div class="partner-name">Мебель Виват</div>
-                    <p class="partner-desc">Кухни и мебель на заказ. Индивидуальные решения по доступным ценам.</p>
-                </a>
-                <a href="https://glazovmebel.ru/?ysclid=mn4gnp8vt7626168263" class="partner-card" target="_blank" rel="noopener noreferrer">
-                    <div class="partner-logo" style="background-image: url('image/logo_glazov.png'); background-size: 70%; background-color: var(--primary);"></div>
-                    <div class="partner-name">Глазов-мебель</div>
-                    <p class="partner-desc">Классическая и современная мебель. Традиции качества и надежности.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Контакты -->
     <section class="contact" id="contact">
         <div class="container">
@@ -2164,10 +2158,10 @@
                     <ul>
                         <li><a href="#about">О нас</a></li>
                         <li><a href="#styles">Стили мебели</a></li>
-                        <li><a href="#portfolio">Наши работы</a></li>
                         <li><a href="#steps">Этапы</a></li>
                         <li><a href="#packages">Пакеты</a></li>
                         <li><a href="#partners">Партнеры</a></li>
+                        <li><a href="#portfolio">Наши работы</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2212,7 +2206,7 @@
             }
         });
 
-        // Данные для карусели с добавленным новым фото
+        // Данные для карусели
         const images = [
             { src: 'image/photo_5296549619733042398_y (1).jpg', alt: 'Интерьер 1' },
             { src: 'image/photo_5296549619733042394_y (1).jpg', alt: 'Интерьер 3' },

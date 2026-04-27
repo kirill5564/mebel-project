@@ -3,34 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мебель и Стиль | Профессиональная комплектация квартир</title>
+    <!-- SEO мета-теги -->
+    <title>Мебель и Стиль | Меблировка квартир под ключ в СПб</title>
+    <meta name="description" content="Комплексная меблировка квартир в Санкт-Петербурге и Кудрово. Полная меблировка студий и 1-комнатных квартир под ключ. Дизайн-проект, подбор мебели, доставка и сборка. Работаем с 2015 года.">
+    <meta name="keywords" content="меблировка квартир под ключ, меблировка студии спб, комплексная меблировка, мебель для апартаментов, полная меблировка 1 комнатной квартиры, меблировка спб">
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Мебель и Стиль | Меблировка квартир под ключ в СПб">
+    <meta property="og:description" content="Комплексная меблировка квартир в Санкт-Петербурге. Полная меблировка студий и 1-комнатных квартир под ключ.">
+    <meta property="og:image" content="image/лицо карусель/300.jpg">
+    <meta property="og:type" content="website">
+    <!-- Предзагрузка для ускорения -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Иконка сайта -->
+    <link rel="icon" type="image/png" sizes="32x32" href="image/Иконки/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* === ОСНОВНЫЕ СТИЛИ === */
         :root {
             --primary: #1a3b2e;
             --primary-light: #2a5a45;
             --accent: #d4b68a;
-            --light: #f8f9fa;
-            --dark: #212529;
+            --accent-neon: #5cdb95;
+            --light: #f5f7f6;
+            --dark: #121212;
             --gray: #6c757d;
-            --light-gray: #e9ecef;
-            --transition: all 0.3s ease;
-            --shadow: 0 5px 15px rgba(0,0,0,0.08);
-            --radius: 8px;
-            
-            /* Тёмная тема переменные */
-            --bg-dark: #121212;
-            --bg-card-dark: #1e1e1e;
-            --text-dark: #e0e0e0;
-            --text-secondary-dark: #aaaaaa;
-            --border-dark: #333333;
+            --light-gray: #e0e5e2;
+            --transition: all 0.25s ease-out;
+            --radius: 4px;
+            --bg-dark: #0a0f0c;
+            --bg-card-dark: #111a15;
+            --text-dark: #e8edea;
+            --text-secondary-dark: #9aaba2;
+            --border-dark: #2a3a32;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
@@ -39,6 +52,21 @@
             background-color: #fff;
             overflow-x: hidden;
             transition: background-color 0.3s, color 0.3s;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        h1, h2, h3, h4, .nav a, .btn, .logo-mini, .full-logo, .package-name, .filter-btn, .style-tab, .section-title h2 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
         }
 
         body.dark-theme {
@@ -48,19 +76,13 @@
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .container-fluid {
-            width: 100%;
-            padding: 0;
-            overflow: hidden;
+            padding: 0 24px;
         }
 
         section {
-            padding: 80px 0;
+            padding: 90px 0;
         }
 
         .section-title {
@@ -69,21 +91,38 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             transition: color 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
         }
 
         body.dark-theme .section-title h2 {
             color: var(--accent);
         }
 
+        body.dark-theme .section-title h2::after {
+            background: var(--accent-neon);
+        }
+
         .section-title p {
             color: var(--gray);
             max-width: 700px;
-            margin: 0 auto;
+            margin: 20px auto 0;
             font-size: 1.1rem;
+            font-weight: 400;
             transition: color 0.3s;
         }
 
@@ -93,138 +132,194 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
-            color: var(--dark);
-            padding: 15px 30px;
+            background-color: transparent;
+            color: var(--primary);
+            padding: 14px 32px;
             border-radius: var(--radius);
             text-decoration: none;
-            font-weight: 600;
-            border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 2px solid var(--primary);
             cursor: pointer;
             transition: var(--transition);
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
         }
 
         .btn:hover {
-            background-color: #c4a074;
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
+            color: white;
+            border-color: var(--primary);
         }
 
-        /* Кнопка переключения темы */
+        body.dark-theme .btn {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .btn::before {
+            background: var(--accent);
+        }
+
+        body.dark-theme .btn:hover {
+            color: var(--bg-dark);
+        }
+
+        /* Кнопки в карточках пакетов */
+        .package-card .btn {
+            background-color: transparent !important;
+            color: white !important;
+            border: 2px solid var(--accent) !important;
+        }
+
+        .package-card .btn::before {
+            background: var(--accent) !important;
+        }
+
+        .package-card .btn:hover {
+            color: var(--bg-dark) !important;
+            border-color: var(--accent) !important;
+        }
+
+        body:not(.dark-theme) .package-card .btn {
+            background-color: transparent !important;
+            color: white !important;
+            border: 2px solid white !important;
+        }
+
+        body:not(.dark-theme) .package-card .btn::before {
+            background: white !important;
+        }
+
+        body:not(.dark-theme) .package-card .btn:hover {
+            color: var(--primary) !important;
+            border-color: white !important;
+        }
+
         .theme-toggle {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background-color: var(--primary);
             color: white;
-            border-radius: 50%;
+            border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .theme-toggle:hover {
-            transform: scale(1.1);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
             background-color: var(--primary-light);
         }
 
         .theme-toggle i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         body.dark-theme .theme-toggle {
             background-color: var(--accent);
-            color: var(--dark);
+            color: var(--bg-dark);
         }
 
-        /* Шапка */
+        /* ШАПКА */
         header {
-            background-color: var(--primary);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: var(--primary) !important;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background 0.3s, box-shadow 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         body.dark-theme header {
-            background: linear-gradient(135deg, #1a3b2e, #2a5a45);
+            background-color: var(--primary) !important;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border-bottom: 1px solid var(--border-dark);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 8px 0;
         }
 
-        .logo-mini {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            transition: color 0.3s;
-            line-height: 1;
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
-        .logo-mini .logo-main {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .logo-mini .logo-main {
-            color: var(--accent);
-        }
-
-        .logo-mini .logo-sub {
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.8);
-            letter-spacing: 0.5px;
-            margin-top: 0;
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .logo-mini .logo-sub {
-            color: var(--text-secondary-dark);
+        .logo-img:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
         }
 
         .nav {
             display: flex;
             list-style: none;
+            gap: 8px;
         }
 
         .nav li {
-            margin-left: 30px;
+            margin-left: 0;
         }
 
         .nav a {
             text-decoration: none;
-            color: white;
+            color: rgba(255,255,255,0.95);
             font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: var(--radius);
             transition: var(--transition);
-        }
-
-        body.dark-theme .nav a {
-            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav a:hover {
-            color: var(--accent);
+            background: rgba(255,255,255,0.25);
+            color: white;
         }
 
         body.dark-theme .nav a:hover {
-            color: var(--accent);
+            background: rgba(92, 219, 149, 0.15);
+            color: var(--accent-neon);
         }
 
         .header-right {
@@ -236,53 +331,45 @@
         .phone a {
             font-weight: 700;
             color: white;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            font-size: 1rem;
             text-decoration: none;
-        }
-
-        body.dark-theme .phone a {
-            color: var(--text-dark);
-        }
-
-        .phone a:hover {
-            color: var(--accent);
         }
 
         .header-btn {
             background-color: white;
             color: var(--primary);
-            padding: 8px 20px;
+            padding: 10px 20px;
             border-radius: var(--radius);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.85rem;
             transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
         }
 
         body.dark-theme .header-btn {
             background-color: var(--accent);
-            color: var(--dark);
+            color: var(--bg-dark);
         }
 
         .header-btn:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+            background-color: transparent;
+            color: white;
+            border-color: white;
         }
 
         body.dark-theme .header-btn:hover {
-            background-color: #c4a074;
+            background-color: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
-        /* Полный логотип под шапкой с разделителем */
+        /* ЛОГОТИП-ЗАГОЛОВОК */
         .full-logo {
             background-color: white;
-            padding: 30px 0 20px;
+            padding: 35px 0 25px;
             margin-top: 70px;
             text-align: center;
             transition: background-color 0.3s;
@@ -293,12 +380,11 @@
         }
 
         .full-logo h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             font-weight: 800;
             color: var(--primary);
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            transition: color 0.3s;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
         }
 
         body.dark-theme .full-logo h1 {
@@ -306,35 +392,24 @@
         }
 
         .logo-divider {
-            width: 100px;
-            height: 3px;
-            background-color: var(--primary);
-            margin: 0 auto 15px;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme .logo-divider {
-            background-color: var(--accent);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto;
         }
 
         .full-logo .subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--gray);
-            letter-spacing: 1px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            transition: color 0.3s;
+            font-weight: 500;
         }
 
-        body.dark-theme .full-logo .subtitle {
-            color: var(--text-secondary-dark);
-        }
-
-        /* Герой с текстом */
+        /* ГЕРОЙ */
         .hero {
-            padding: 60px 0 40px;
+            padding: 50px 0 40px;
             background: white;
-            position: relative;
-            transition: background 0.3s;
         }
 
         body.dark-theme .hero {
@@ -343,17 +418,16 @@
 
         .hero-content {
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-content .hero-title {
-            font-size: 2rem;
+            font-size: 2.4rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 30px;
-            line-height: 1.3;
-            transition: color 0.3s;
+            margin-bottom: 25px;
+            line-height: 1.2;
         }
 
         body.dark-theme .hero-content .hero-title {
@@ -363,9 +437,7 @@
         .hero-content .hero-subtitle {
             font-size: 1.2rem;
             color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.6;
-            transition: color 0.3s;
+            margin-bottom: 30px;
         }
 
         body.dark-theme .hero-content .hero-subtitle {
@@ -373,24 +445,24 @@
         }
 
         .hero-content .hero-text {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 600;
             color: var(--primary);
-            margin: 30px 0 20px;
-            line-height: 1.3;
-            transition: color 0.3s;
+            margin: 40px 0 20px;
         }
 
         body.dark-theme .hero-content .hero-text {
             color: var(--accent);
         }
 
-        /* Карусель */
+        .hero-content .btn {
+            margin: 20px 0;
+        }
+
+        /* КАРУСЕЛЬ */
         .carousel-section {
             padding: 40px 0 60px;
             background: white;
-            transition: background 0.3s;
-            position: relative;
         }
 
         body.dark-theme .carousel-section {
@@ -417,64 +489,51 @@
 
         .carousel-track {
             display: flex;
-            gap: 20px;
-            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            gap: 16px;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: transform;
         }
 
         .carousel-slide {
-            flex: 0 0 calc(70% - 10px);
-            transform: scale(0.9);
-            opacity: 0.5;
-            transition: all 0.5s ease;
+            flex: 0 0 calc(70% - 8px);
+            transform: scale(0.92);
+            opacity: 0.6;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            filter: brightness(0.8);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            filter: brightness(0.85);
+            border: 2px solid transparent;
         }
 
         .carousel-slide.active {
             transform: scale(1);
             opacity: 1;
-            filter: brightness(1);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            filter: brightness(1.05);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.25);
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .carousel-slide.active {
+            border-color: var(--accent-neon);
         }
 
         .carousel-slide img {
             width: 100%;
-            height: 500px;
+            height: 480px;
             object-fit: cover;
             display: block;
-            pointer-events: none;
-            border-radius: var(--radius);
-        }
-
-        .carousel-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 15%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        body.dark-theme .carousel-container::before {
-            background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
         }
 
         .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             background-color: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -483,45 +542,40 @@
             color: var(--primary);
             transition: var(--transition);
             z-index: 10;
-            opacity: 0.8;
+            opacity: 1;
         }
 
         body.dark-theme .carousel-button {
             background-color: var(--bg-card-dark);
+            border-color: var(--accent);
             color: var(--accent);
         }
 
         .carousel-button:hover {
             background-color: var(--primary);
             color: white;
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1);
+            transform: translateY(-50%) scale(1.05);
         }
 
         body.dark-theme .carousel-button:hover {
             background-color: var(--accent);
-            color: var(--dark);
+            color: var(--bg-dark);
         }
 
-        .carousel-button.prev {
-            left: 40px;
-        }
-
-        .carousel-button.next {
-            right: 40px;
-        }
+        .carousel-button.prev { left: 30px; }
+        .carousel-button.next { right: 30px; }
 
         .carousel-dots {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 25px;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 0;
             background-color: var(--light-gray);
             cursor: pointer;
             transition: var(--transition);
@@ -533,19 +587,17 @@
 
         .dot.active {
             background-color: var(--primary);
-            width: 30px;
-            border-radius: 5px;
+            width: 24px;
         }
 
         body.dark-theme .dot.active {
-            background-color: var(--accent);
+            background-color: var(--accent-neon);
         }
 
-        /* Блок с картинкой и текстом вместо преимуществ */
+        /* О НАС */
         .about-block {
             background-color: var(--light);
-            transition: background-color 0.3s;
-            padding: 80px 0;
+            padding: 90px 0;
         }
 
         body.dark-theme .about-block {
@@ -555,7 +607,7 @@
         .about-container {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
@@ -564,14 +616,18 @@
             min-width: 300px;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: none;
+            border: 1px solid var(--light-gray);
+        }
+
+        body.dark-theme .about-image {
+            border-color: var(--border-dark);
         }
 
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
         }
 
         .about-text {
@@ -580,12 +636,11 @@
         }
 
         .about-text .about-bold {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 20px;
-            line-height: 1.4;
-            transition: color 0.3s;
+            margin-bottom: 25px;
+            line-height: 1.3;
         }
 
         body.dark-theme .about-text .about-bold {
@@ -594,20 +649,18 @@
 
         .about-text p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.7;
             margin-bottom: 20px;
-            transition: color 0.3s;
         }
 
         body.dark-theme .about-text p {
             color: var(--text-secondary-dark);
         }
 
-        /* Стили мебели */
+        /* СТИЛИ МЕБЕЛИ */
         .styles {
             background-color: white;
-            transition: background-color 0.3s;
         }
 
         body.dark-theme .styles {
@@ -624,24 +677,22 @@
             justify-content: center;
             margin-bottom: 40px;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--light-gray);
-            transition: border-color 0.3s;
-        }
-
-        body.dark-theme .style-tabs {
-            border-bottom-color: var(--border-dark);
+            gap: 10px;
+            border-bottom: none;
         }
 
         .style-tab {
-            padding: 15px 30px;
+            padding: 12px 24px;
             background: none;
             border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 1.1rem;
+            border-bottom: 2px solid transparent;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--gray);
             cursor: pointer;
             transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         body.dark-theme .style-tab {
@@ -650,23 +701,27 @@
 
         .style-tab.active {
             color: var(--primary);
-            border-bottom: 3px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
         }
 
         body.dark-theme .style-tab.active {
             color: var(--accent);
+            border-bottom-color: var(--accent-neon);
         }
 
         .style-content {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 40px;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
             display: none;
-            transition: background-color 0.3s;
+            box-shadow: none;
+            border-left: 3px solid var(--accent);
+            padding-left: 30px;
         }
 
         body.dark-theme .style-content {
-            background: var(--bg-card-dark);
+            background: transparent;
+            border-left-color: var(--accent-neon);
         }
 
         .style-content.active {
@@ -676,44 +731,34 @@
         .style-header {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .style-icon {
             width: 60px;
             height: 60px;
-            border-radius: 20px;
+            border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             margin-right: 20px;
-            transition: all 0.3s ease;
+            background: rgba(26, 59, 46, 0.05) !important;
         }
 
-        .style-icon i {
-            transition: color 0.3s ease;
+        body.dark-theme .style-icon {
+            background: rgba(212, 182, 138, 0.1) !important;
         }
 
         .style-header h3 {
             font-size: 1.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .style-header p {
-            color: var(--dark);
-            transition: color 0.3s;
-        }
-
-        body.dark-theme .style-header p {
-            color: var(--text-secondary-dark);
         }
 
         .style-desc {
             color: var(--dark);
             line-height: 1.7;
             margin-bottom: 25px;
-            transition: color 0.3s;
+            font-size: 1.05rem;
         }
 
         body.dark-theme .style-desc {
@@ -723,7 +768,7 @@
         .style-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 15px;
             margin-top: 30px;
         }
 
@@ -733,23 +778,17 @@
             gap: 12px;
         }
 
-        .style-feature i {
-            transition: color 0.3s;
-        }
-
         .style-feature span {
             color: var(--dark);
-            transition: color 0.3s;
         }
 
         body.dark-theme .style-feature span {
-            color: var(--text-dark);
+            color: var(--text-secondary-dark);
         }
 
-        /* Этапы работы */
+        /* ЭТАПЫ РАБОТЫ */
         .steps {
             background-color: white;
-            transition: background-color 0.3s;
         }
 
         body.dark-theme .steps {
@@ -759,7 +798,7 @@
         .steps-container {
             display: flex;
             align-items: flex-start;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
             margin-bottom: 40px;
         }
@@ -777,45 +816,37 @@
         .steps-image {
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: none;
             margin-bottom: 25px;
+            border: 1px solid var(--light-gray);
+        }
+
+        body.dark-theme .steps-image {
+            border-color: var(--border-dark);
         }
 
         .steps-image img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
-        }
-
-        .steps-note {
-            padding: 0;
-            border: none;
-            background: none;
         }
 
         .steps-note p {
             color: var(--dark);
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
             margin-bottom: 15px;
-            transition: color 0.3s;
         }
 
         body.dark-theme .steps-note p {
             color: var(--text-secondary-dark);
         }
 
-        .steps-note p:last-child {
-            margin-bottom: 0;
-        }
-
         .steps-content .step-intro {
             color: var(--dark);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.7;
             margin-bottom: 30px;
-            transition: color 0.3s;
         }
 
         body.dark-theme .steps-content .step-intro {
@@ -824,14 +855,19 @@
 
         .steps-content .step-item {
             margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent);
+        }
+
+        body.dark-theme .steps-content .step-item {
+            border-left-color: var(--accent-neon);
         }
 
         .steps-content .step-item h3 {
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 8px;
-            transition: color 0.3s;
+            margin-bottom: 5px;
         }
 
         body.dark-theme .steps-content .step-item h3 {
@@ -840,9 +876,8 @@
 
         .steps-content .step-item p {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
-            transition: color 0.3s;
         }
 
         body.dark-theme .steps-content .step-item p {
@@ -854,10 +889,9 @@
             margin-top: 20px;
         }
 
-        /* Пакеты */
+        /* ПАКЕТЫ */
         .packages {
             background-color: var(--light);
-            transition: background-color 0.3s;
         }
 
         body.dark-theme .packages {
@@ -869,24 +903,21 @@
             justify-content: center;
             margin-bottom: 40px;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--light-gray);
-            transition: border-color 0.3s;
-        }
-
-        body.dark-theme .package-tabs {
-            border-bottom-color: var(--border-dark);
+            gap: 10px;
+            border-bottom: none;
         }
 
         .package-tab {
-            padding: 15px 30px;
+            padding: 12px 24px;
             background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 1.1rem;
+            border: 2px solid transparent;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--gray);
             cursor: pointer;
             transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         body.dark-theme .package-tab {
@@ -895,16 +926,17 @@
 
         .package-tab.active {
             color: var(--primary);
-            border-bottom: 3px solid var(--accent);
+            border: 2px solid var(--accent);
         }
 
         body.dark-theme .package-tab.active {
             color: var(--accent);
+            border-color: var(--accent-neon);
         }
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -912,42 +944,72 @@
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: var(--transition);
-            position: relative;
             display: flex;
             flex-direction: column;
+            border: 2px solid transparent;
         }
 
         body.dark-theme .package-card {
             background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: transparent;
         }
 
         .package-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .package-card:hover {
+            border-color: var(--accent-neon);
+        }
+
+        .package-card.comfort-package {
+            border: 2px solid var(--accent);
+        }
+
+        body.dark-theme .package-card.comfort-package {
+            border-color: var(--accent-neon);
+        }
+
+        .packages-grid:hover .package-card.comfort-package {
+            border-color: transparent;
+        }
+
+        .packages-grid:hover .package-card:hover {
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .packages-grid:hover .package-card.comfort-package {
+            border-color: transparent;
+        }
+
+        body.dark-theme .packages-grid:hover .package-card:hover {
+            border-color: var(--accent-neon);
         }
 
         .package-header {
-            padding: 25px;
+            padding: 30px 25px;
             text-align: center;
-            background-color: var(--primary);
+            background: var(--primary);
             color: white;
-            transition: background-color 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         body.dark-theme .package-header {
-            background-color: var(--primary-light);
+            background: var(--primary);
         }
 
         .package-name {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
         }
 
         .package-price {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 20px;
         }
 
@@ -957,18 +1019,16 @@
         }
 
         .feature-section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .feature-section h4 {
             font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            transition: color 0.3s;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         body.dark-theme .feature-section h4 {
@@ -980,20 +1040,23 @@
             align-items: flex-start;
             margin-bottom: 10px;
             font-size: 0.9rem;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .feature i {
             color: var(--accent);
-            margin-right: 10px;
-            font-size: 0.8rem;
+            margin-right: 12px;
+            font-size: 0.85rem;
             margin-top: 3px;
             flex-shrink: 0;
         }
 
+        body.dark-theme .feature i {
+            color: var(--accent-neon);
+        }
+
         .feature span {
             color: var(--dark);
-            transition: color 0.3s;
         }
 
         body.dark-theme .feature span {
@@ -1001,12 +1064,11 @@
         }
 
         .feature-note {
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid var(--light-gray);
             font-size: 0.85rem;
             color: var(--gray);
-            transition: color 0.3s, border-color 0.3s;
         }
 
         body.dark-theme .feature-note {
@@ -1014,15 +1076,9 @@
             border-top-color: var(--border-dark);
         }
 
-        .feature-note i {
-            color: var(--accent);
-            margin-right: 8px;
-        }
-
-        /* НАШИ РАБОТЫ - с галереей */
+        /* ПОРТФОЛИО */
         .portfolio {
             background-color: white;
-            transition: background-color 0.3s;
         }
 
         body.dark-theme .portfolio {
@@ -1033,36 +1089,39 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 50px;
         }
 
         .filter-btn {
-            padding: 10px 25px;
+            padding: 10px 24px;
             background: none;
-            border: 2px solid var(--primary);
-            border-radius: 30px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
             font-weight: 600;
-            color: var(--primary);
+            color: var(--gray);
             cursor: pointer;
             transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         body.dark-theme .filter-btn {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--border-dark);
+            color: var(--text-secondary-dark);
         }
 
         .filter-btn.active,
         .filter-btn:hover {
-            background-color: var(--primary);
-            color: white;
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         body.dark-theme .filter-btn.active,
         body.dark-theme .filter-btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-dark);
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         .portfolio-grid {
@@ -1074,23 +1133,30 @@
         .portfolio-item {
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: var(--transition);
             background: white;
             cursor: pointer;
+            border: 1px solid var(--light-gray);
         }
 
         body.dark-theme .portfolio-item {
             background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: var(--border-dark);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .portfolio-item:hover {
+            border-color: var(--accent-neon);
         }
 
         .portfolio-img {
-            height: 250px;
+            height: 260px;
             background-color: var(--light-gray);
             overflow: hidden;
         }
@@ -1103,7 +1169,7 @@
         }
 
         .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .portfolio-info {
@@ -1111,10 +1177,9 @@
         }
 
         .portfolio-info h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--primary);
-            transition: color 0.3s;
         }
 
         body.dark-theme .portfolio-info h3 {
@@ -1124,7 +1189,7 @@
         .portfolio-info p {
             color: var(--gray);
             margin-bottom: 15px;
-            transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         body.dark-theme .portfolio-info p {
@@ -1138,121 +1203,124 @@
         }
 
         .tag {
-            padding: 5px 12px;
-            background-color: rgba(26, 59, 46, 0.1);
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 4px 12px;
+            background-color: transparent;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
             color: var(--primary);
-            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         body.dark-theme .tag {
-            background-color: rgba(212, 182, 138, 0.1);
             color: var(--accent);
+            border-color: var(--accent);
         }
 
-        /* Лайтбокс для галереи */
-        .lightbox {
+        /* МОДАЛЬНОЕ ОКНО */
+        .modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(10, 15, 12, 0.95);
             z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            overflow-y: auto;
         }
 
-        .lightbox.active {
-            display: flex;
+        .modal.active {
+            display: block;
         }
 
-        .lightbox-content {
+        .modal-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
             position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
+            border: 1px solid var(--light-gray);
         }
 
-        .lightbox-img {
-            max-width: 90vw;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 8px;
+        body.dark-theme .modal-content {
+            background: var(--bg-card-dark);
+            border-color: var(--border-dark);
         }
 
-        .lightbox-close {
+        .modal-close {
             position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
+            top: 20px;
+            right: 25px;
             font-size: 2rem;
             cursor: pointer;
-            background: none;
-            border: none;
-            z-index: 2001;
+            color: var(--gray);
+            transition: color 0.3s;
+            z-index: 10;
         }
 
-        .lightbox-prev, .lightbox-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        body.dark-theme .modal-close:hover {
+            color: var(--accent-neon);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            padding-right: 40px;
+        }
+
+        body.dark-theme .modal-title {
+            color: var(--accent);
+        }
+
+        .modal-desc {
+            color: var(--gray);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        body.dark-theme .modal-desc {
+            color: var(--text-secondary-dark);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .modal-gallery {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            break-inside: avoid;
+            transition: transform 0.3s;
             cursor: pointer;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            display: block;
+            border: 1px solid var(--light-gray);
         }
 
-        .lightbox-prev:hover, .lightbox-next:hover {
-            background: var(--accent);
-            color: var(--dark);
+        body.dark-theme .modal-gallery img {
+            border-color: var(--border-dark);
         }
 
-        .lightbox-prev {
-            left: -70px;
+        .modal-gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
         }
 
-        .lightbox-next {
-            right: -70px;
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .lightbox-prev {
-                left: 10px;
-            }
-            .lightbox-next {
-                right: 10px;
-            }
-            .lightbox-prev, .lightbox-next {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Партнеры - бесконечная карусель */
+        /* ПАРТНЕРЫ */
         .partners {
             background-color: var(--light);
-            transition: background-color 0.3s;
             overflow: hidden;
         }
 
@@ -1269,7 +1337,7 @@
 
         .partners-carousel-track {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             animation: scrollPartners 50s linear infinite;
             width: max-content;
         }
@@ -1280,30 +1348,37 @@
 
         .partner-card-static {
             flex: 0 0 auto;
-            width: 260px;
+            width: 240px;
             background: white;
             border-radius: var(--radius);
             padding: 25px 20px;
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             align-items: center;
+            border: 1px solid var(--light-gray);
         }
 
         body.dark-theme .partner-card-static {
             background: var(--bg-card-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: var(--border-dark);
         }
 
         .partner-card-static:hover {
             transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+
+        body.dark-theme .partner-card-static:hover {
+            border-color: var(--accent-neon);
         }
 
         .partner-logo-static {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background-color: var(--primary);
             border-radius: 50%;
             display: flex;
@@ -1313,23 +1388,18 @@
             font-size: 2rem;
             color: white;
             font-weight: 700;
-            transition: background-color 0.3s;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         body.dark-theme .partner-logo-static {
             background-color: var(--accent);
-            color: var(--dark);
+            color: var(--bg-dark);
         }
 
         .partner-name-static {
             font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--primary);
-            transition: color 0.3s;
         }
 
         body.dark-theme .partner-name-static {
@@ -1340,7 +1410,6 @@
             color: var(--gray);
             font-size: 0.85rem;
             line-height: 1.4;
-            transition: color 0.3s;
         }
 
         body.dark-theme .partner-desc-static {
@@ -1348,58 +1417,31 @@
         }
 
         @keyframes scrollPartners {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Контакты */
+        /* КОНТАКТЫ */
         .contact {
-            background-color: var(--primary);
+            background: var(--primary);
             color: white;
             text-align: center;
-            transition: background-color 0.3s;
         }
 
         body.dark-theme .contact {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background: var(--primary);
         }
 
-        .contact h2 {
+        .contact .section-title h2 {
             color: white;
-            margin-bottom: 15px;
+        }
+
+        .contact .section-title h2::after {
+            background: white;
         }
 
         .contact .section-title p {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
         }
 
         .contact-buttons {
@@ -1410,1347 +1452,402 @@
             margin-top: 30px;
         }
 
-        /* Футер */
-        footer {
-            background-color: var(--dark);
-            color: rgba(255,255,255,0.7);
-            padding: 50px 0 30px;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-theme footer {
-            background-color: #0a0a0a;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .contact-buttons .btn {
+            background-color: transparent;
             color: white;
-            margin-bottom: 15px;
+            border-color: white;
         }
 
-        .footer-container ul {
-            list-style: none;
+        .contact-buttons .btn::before {
+            background: white;
         }
 
-        .footer-container li {
-            margin-bottom: 10px;
-        }
+        .contact-buttons .btn:hover {
+        color: var(--primary);
+    }
 
-        .footer-container a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 50px;
+    }
 
-        .footer-container a:hover {
-            color: white;
-        }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
 
-        /* Адаптивность */
-        @media (max-width: 1400px) {
-            .carousel-slide {
-                flex: 0 0 calc(75% - 10px);
-            }
-            .carousel-slide img {
-                height: 450px;
-            }
-        }
+    /* ФУТЕР */
+    footer {
+        background-color: #0a0f0c;
+        color: rgba(255,255,255,0.6);
+        padding: 60px 0 30px;
+    }
 
-        @media (max-width: 1200px) {
-            .carousel-slide {
-                flex: 0 0 calc(80% - 10px);
-            }
-            .carousel-slide img {
-                height: 400px;
-            }
-        }
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
 
-        @media (max-width: 992px) {
-            .carousel-slide {
-                flex: 0 0 calc(85% - 10px);
-            }
-            .carousel-slide img {
-                height: 380px;
-            }
-            .carousel-button.prev {
-                left: 20px;
-            }
-            .carousel-button.next {
-                right: 20px;
-            }
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .steps-container {
-                flex-direction: column;
-            }
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-            .partner-card-static {
-                width: 220px;
-                padding: 20px 15px;
-            }
-            .partner-logo-static {
-                width: 80px;
-                height: 80px;
-                font-size: 1.5rem;
-            }
-        }
+    .footer-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 15px;
+    }
 
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            .nav {
-                margin: 15px 0;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .nav li {
-                margin: 0 10px 10px;
-            }
-            .header-right {
-                margin-top: 10px;
-            }
-            .full-logo h1 {
-                font-size: 2.5rem;
-            }
-            .full-logo .subtitle {
-                font-size: 1rem;
-            }
-            .hero-content .hero-title {
-                font-size: 1.6rem;
-            }
-            .hero-content .hero-text {
-                font-size: 1.6rem;
-            }
-            .carousel-slide {
-                flex: 0 0 calc(90% - 10px);
-            }
-            .carousel-slide img {
-                height: 350px;
-            }
-            .carousel-button {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .partner-card-static {
-                width: 200px;
-                padding: 15px 10px;
-            }
-            .partner-name-static {
-                font-size: 1rem;
-            }
-            .partner-desc-static {
-                font-size: 0.75rem;
-            }
-        }
+    .footer-container ul {
+        list-style: none;
+    }
 
-        @media (max-width: 480px) {
-            .full-logo h1 {
-                font-size: 2rem;
-            }
-            .hero-content .hero-title {
-                font-size: 1.4rem;
-            }
-            .hero-content .hero-text {
-                font-size: 1.4rem;
-            }
-            .carousel-slide {
-                flex: 0 0 calc(95% - 5px);
-            }
-            .carousel-slide img {
-                height: 300px;
-            }
-            .carousel-button.prev {
-                left: 10px;
-            }
-            .carousel-button.next {
-                right: 10px;
-            }
-            .portfolio-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-            .filter-btn {
-                width: 100%;
-                max-width: 250px;
-            }
-            .package-price {
-                font-size: 1.4rem;
-            }
-            .partner-card-static {
-                width: 170px;
-                padding: 12px 8px;
-            }
+    .footer-container li {
+        margin-bottom: 12px;
+    }
+
+    .footer-container a {
+        color: rgba(255,255,255,0.5);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-container a:hover {
+        color: var(--accent-neon);
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85rem;
+    }
+
+    /* АДАПТИВНОСТЬ */
+    @media (max-width: 1400px) {
+        .carousel-slide { flex: 0 0 calc(75% - 8px); }
+        .carousel-slide img { height: 440px; }
+    }
+    @media (max-width: 1200px) {
+        .carousel-slide { flex: 0 0 calc(80% - 8px); }
+        .carousel-slide img { height: 400px; }
+    }
+    @media (max-width: 992px) {
+        .carousel-slide { flex: 0 0 calc(85% - 8px); }
+        .carousel-slide img { height: 360px; }
+        .carousel-button.prev { left: 15px; }
+        .carousel-button.next { right: 15px; }
+        .about-container { flex-direction: column; }
+        .steps-container { flex-direction: column; }
+        .packages-grid { grid-template-columns: 1fr; }
+        .hero-content .hero-title { font-size: 2rem; }
+    }
+    @media (max-width: 768px) {
+        h2 { font-size: 2.2rem; }
+        .header-container { flex-direction: column; padding: 15px 0; }
+        .nav { flex-wrap: wrap; justify-content: center; }
+        .header-right { margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+        .full-logo { 
+            margin-top: 180px; 
+            padding: 30px 0 20px;
         }
-    </style>
+        .full-logo h1 { font-size: 3rem; }
+        .hero-content .hero-title { font-size: 1.8rem; }
+        .hero-content .hero-text { font-size: 1.5rem; }
+        .carousel-slide { flex: 0 0 calc(90% - 8px); }
+        .carousel-slide img { height: 320px; }
+        .portfolio-grid { grid-template-columns: 1fr; }
+        .modal-gallery { column-count: 2; }
+    }
+    @media (max-width: 480px) {
+        .full-logo { 
+            margin-top: 200px; 
+            padding: 25px 0 15px;
+        }
+        .full-logo h1 { font-size: 2.2rem; }
+        .carousel-slide { flex: 0 0 calc(95% - 5px); }
+        .carousel-slide img { height: 280px; }
+        .modal-gallery { column-count: 1; }
+    }
+</style>
 </head>
 <body>
-    <!-- Кнопка переключения темы -->
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
-
-    <!-- Шапка -->
+    <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
     <header>
         <div class="container header-container">
             <a href="#home" class="logo-mini">
-                <div class="logo-main">МиС</div>
-                <div class="logo-sub">Мебель и Стиль</div>
+                <img src="image/Иконки/nano-banana-69d76b013d1d1ad279ceeb46.png" alt="Мебель и Стиль" class="logo-img">
             </a>
             <ul class="nav">
-                <li><a href="#about">О нас</a></li>
+                <li><a href="#about">О нас</a></li><li><a href="#steps">Этапы</a></li>
+                <li><a href="#packages">Пакеты</a></li><li><a href="#portfolio">Работы</a></li>
                 <li><a href="#styles">Стили</a></li>
-                <li><a href="#steps">Этапы</a></li>
-                <li><a href="#packages">Пакеты</a></li>
-                <li><a href="#portfolio">Наши работы</a></li>
-                <li><a href="#partners">Партнеры</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#partners">Партнеры</a></li><li><a href="#contact">Контакты</a></li>
             </ul>
             <div class="header-right">
-                <div class="phone">
-                    <a href="tel:+78129258856"><i class="fas fa-phone"></i> +7 (812) 925 88-56</a>
-                </div>
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="header-btn" target="_blank">Заказать</a>
+                <div class="phone"><a href="tel:+78129258856"><i class="fas fa-phone"></i> +7 (812) 925 88-56</a></div>
+                <a href="https://vk.me/club96810994" class="header-btn" target="_blank">Заказать</a>
             </div>
         </div>
     </header>
-
-    <!-- Полный логотип под шапкой с разделителем -->
-    <div class="full-logo">
-        <div class="container">
-            <h1>МЕБЕЛЬ и СТИЛЬ</h1>
-            <div class="logo-divider"></div>
-            <div class="subtitle">Меблировка под ключ</div>
-        </div>
-    </div>
+    <div class="full-logo"><div class="container"><h1>МЕБЕЛЬ и СТИЛЬ</h1><div class="logo-divider"></div><div class="subtitle">Меблировка под ключ</div></div></div>
 
     <!-- КАРУСЕЛЬ -->
-    <section class="carousel-section">
-        <div class="carousel-container">
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <div class="carousel-track" id="carouselTrack">
-                    <!-- Слайды будут добавлены через JavaScript -->
-                </div>
-            </div>
-            
-            <button class="carousel-button prev" id="prevBtn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-button next" id="nextBtn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <section class="carousel-section"><div class="carousel-container"><div class="carousel-wrapper" id="carouselWrapper"><div class="carousel-track" id="carouselTrack"></div></div>
+    <button class="carousel-button prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-button next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="carouselDots"></div></div></section>
 
-            <div class="carousel-dots" id="carouselDots"></div>
+    <!-- ГЕРОЙ -->
+    <section class="hero" id="hero"><div class="container"><div class="hero-content">
+        <div class="hero-title">Интерьер, в который хочется возвращаться</div>
+        <div class="hero-subtitle">Полный цикл меблировки квартир — от идеи до передачи ключей. Работаем в Санкт-Петербурге и Ленобласти.</div>
+        <a href="https://vk.me/club96810994" class="btn" target="_blank">Рассчитать стоимость</a>
+        <div class="hero-text">Доверяя обустройство профессионалам, вы получаете не просто мебель, а готовое пространство для жизни.</div>
+    </div></div></section>
+
+    <!-- О НАС -->
+    <section class="about-block" id="about"><div class="container"><div class="about-container">
+        <div class="about-image">
+            <img src="image/photo_5233431171193051302_y.jpg" 
+                 srcset="image/mobile/photo_5233431171193051302_y.webp 600w"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 alt="О компании Мебель и Стиль">
         </div>
-    </section>
-
-    <!-- Герой с текстом -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-title">Готовое решение, которое отражает вашу индивидуальность.</div>
-                
-                <div class="hero-subtitle">Полный цикл меблировки под ключ. Мы с вами от дизайн-проекта до реализации.</div>
-                
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="margin: 20px 0 30px;" target="_blank">
-                    Рассчитать стоимость
-                </a>
-                
-                <div class="hero-text">Выбирая компанию для меблировки под ключ, вы делаете инвестицию в комфорт и уют вашей недвижимости.</div>
-            </div>
+        <div class="about-text">
+            <div class="about-bold">Помогаем подготовить недвижимость к проживанию, сдаче в аренду или продаже.</div>
+            <p>За каждым проектом стоит индивидуальный подход и внимание к деталям. Мы не просто расставляем мебель — мы создаём целостное пространство, где всё продумано до мелочей.</p>
+            <p>Сотрудничаем с проверенными фабриками и поставщиками, поэтому можем предложить широкий выбор материалов и решений под любой бюджет. А в наших салонах вы сможете лично оценить качество представленных образцов.</p>
+            <p>Мы сопровождаем проект на всех этапах, избавляя вас от лишних хлопот. Наш принцип — ответственный подход и искренняя забота о результате.</p>
+            <a href="https://vk.me/club96810994" class="btn" target="_blank">Обсудить проект</a>
         </div>
-    </section>
+    </div></div></section>
 
-    <!-- Блок с картинкой и текстом (вместо преимуществ) -->
-    <section class="about-block" id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="image/photo_5233431171193051302_y.jpg" alt="О нас">
-                </div>
-                <div class="about-text">
-                    <div class="about-bold">Мы предлагаем профессиональную подготовку вашего объекта недвижимости под любые цели.</div>
-                    <p>Создаем уникальные интерьеры, которые отражают ваш вкус и стиль жизни. Каждый проект — это индивидуальный подход, внимание к деталям и безупречное качество.</p>
-                    <p>Работаем с проверенными поставщиками и материалами, чтобы результат радовал вас долгие годы. Плюсом в реализации проекта с нашей компанией будет возможность вживую увидеть предлагаемый ассортимент в одном из наших салонов.</p>
-                    <p>Мы берем на себя все заботы по обустройству вашего пространства - к своей работе подходим ответственно, к каждому проекту с душой и любовью.</p>
-                    <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" target="_blank">Обсудить проект</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Стили мебели -->
-    <section class="styles" id="styles">
-        <div class="container">
-            <div class="section-title">
-                <h2>Стилевые решения</h2>
-                <p>Единый стиль мебели позволяет создать однородное и уютное пространство, где все детали будут идеально сочетаться друг с другом.</p>
-            </div>
-            
-            <div class="styles-container">
-                <div class="style-tabs">
-                    <button class="style-tab active" data-style="scandinavian">Скандинавский</button>
-                    <button class="style-tab" data-style="modern">Современный</button>
-                    <button class="style-tab" data-style="loft">Лофт</button>
-                    <button class="style-tab" data-style="classic">Неоклассика</button>
-                </div>
-                
-                <div class="style-content active" id="scandinavian">
-                    <div class="style-header">
-                        <div class="style-icon" data-style="scandinavian" style="background: rgba(107, 140, 92, 0.15);">
-                            <i class="fas fa-leaf" style="color: #8bb56a;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color: #8bb56a;">Скандинавский стиль</h3>
-                            <p>Идеален для сдачи в аренду и быстрой продажи</p>
-                        </div>
-                    </div>
-                    <p class="style-desc">
-                        Светлые пространства, функциональная мебель из натуральных материалов, акцент на естественное освещение. 
-                        Этот стиль создаёт ощущение простора, чистоты и уюта, что особенно ценится арендаторами и покупателями.
-                    </p>
-                    <div class="style-features">
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #8bb56a;"></i>
-                            <span>Светлые тона (белый, серый, бежевый)</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #8bb56a;"></i>
-                            <span>Мебель из массива дерева</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #8bb56a;"></i>
-                            <span>Минималистичный текстиль</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #8bb56a;"></i>
-                            <span>Функциональное хранение</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="style-content" id="modern">
-                    <div class="style-header">
-                        <div class="style-icon" data-style="modern" style="background: rgba(90, 125, 154, 0.15);">
-                            <i class="fas fa-cubes" style="color: #6c9ebf;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color: #6c9ebf;">Современный стиль</h3>
-                            <p>Универсальное решение для жизни и инвестиций</p>
-                        </div>
-                    </div>
-                    <p class="style-desc">
-                        Чёткие линии, нейтральная цветовая палитра, технологичная мебель с интегрированными решениями для хранения. 
-                        Баланс эстетики и практичности, который подходит большинству покупателей.
-                    </p>
-                    <div class="style-features">
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
-                            <span>Нейтральная цветовая гамма</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
-                            <span>Модульные системы хранения</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
-                            <span>Встраиваемая техника</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #6c9ebf;"></i>
-                            <span>Умные решения для дома</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="style-content" id="loft">
-                    <div class="style-header">
-                        <div class="style-icon" data-style="loft" style="background: rgba(184, 111, 80, 0.15);">
-                            <i class="fas fa-industry" style="color: #cd8a62;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color: #cd8a62;">Лофт</h3>
-                            <p>Для креативных пространств и коммерческой недвижимости</p>
-                        </div>
-                    </div>
-                    <p class="style-desc">
-                        Индустриальная эстетика, открытые пространства, смешение материалов (металл, кирпич, дерево). 
-                        Отлично подходит для студий, апартаментов и коммерческих объектов.
-                    </p>
-                    <div class="style-features">
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #cd8a62;"></i>
-                            <span>Индустриальные материалы</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #cd8a62;"></i>
-                            <span>Многофункциональная мебель</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #cd8a62;"></i>
-                            <span>Акцентное освещение</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #cd8a62;"></i>
-                            <span>Открытые системы хранения</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="style-content" id="classic">
-                    <div class="style-header">
-                        <div class="style-icon" data-style="classic" style="background: rgba(155, 107, 107, 0.15);">
-                            <i class="fas fa-crown" style="color: #b88b8b;"></i>
-                        </div>
-                        <div>
-                            <h3 style="color: #b88b8b;">Неоклассика</h3>
-                            <p>Премиум-решение для элитной недвижимости</p>
-                        </div>
-                    </div>
-                    <p class="style-desc">
-                        Элегантность, симметрия, благородные материалы и внимание к деталям. 
-                        Повышает воспринимаемую стоимость объекта и привлекает требовательных покупателей.
-                    </p>
-                    <div class="style-features">
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #b88b8b;"></i>
-                            <span>Натуральные материалы (дерево, мрамор)</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #b88b8b;"></i>
-                            <span>Элегантная цветовая палитра</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #b88b8b;"></i>
-                            <span>Качественная фурнитура</span>
-                        </div>
-                        <div class="style-feature">
-                            <i class="fas fa-check" style="color: #b88b8b;"></i>
-                            <span>Декоративные элементы</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Этапы работы -->
-    <section class="steps" id="steps">
-        <div class="container">
-            <div class="section-title">
-                <h2>Этапы взаимодействия</h2>
-                <p>Чёткий процесс, который гарантирует результат и соблюдение сроков.</p>
-            </div>
-            <div class="steps-container">
-                <div class="steps-content">
-                    <div class="step-intro">
-                        Меблировка под ключ — это современный подход к созданию интерьера, который позволяет сэкономить время и силы, доверив все этапы профессионалам. Одним из главных преимуществ этого решения является комплексный подход.
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Знакомство</h3>
-                        <p>Анализ потребностей и особенностей помещения.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Разработка концепции и дизайн-проекта</h3>
-                        <p>На этом этапе создается визуализация будущего интерьера, что позволяет заранее увидеть, как будет выглядеть пространство. Включает в себя 3D проект, подбор мебели, техники и материалов, а также расстановку в вашу планировку по чистовому обмеру квартиры.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Заключение договора</h3>
-                        <p>Cогласование спецификации по ассортименту, подписание договора, предоплата 50% от стоимости проекта.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Реализация проекта</h3>
-                        <p>Изготовление, доставка и сборка мебели, оснащение техникой и ее подключение. Организация пространства, создание единого стилевого решения, финальное оформление и декорирование.</p>
-                    </div>
-                    
-                    <div class="step-item">
-                        <h3>Сдача объекта</h3>
-                        <p>Приемка объекта, подписание закрывающих документов, передача ключей.</p>
-                    </div>
-                </div>
-                <div class="steps-right">
-                    <div class="steps-image">
-                        <img src="image/IMG_8212.jpg" alt="Этапы работы">
-                    </div>
-                    <div class="steps-note">
-                        <p>В среднем комплектация студии или 1-комнатной квартиры «под ключ» занимает 4 недели с учетом того, что все позиции мы выбираем из наличия в магазинах. В случае индивидуальных запросов на мебель или кухню на заказ сроки могут быть увеличены.</p>
-                        <p>Все этапы согласовываем в удобном для Вас формате лично или дистанционно через любой комфортный мессенджер. Мы регулярно присылаем фото и видео отчеты и всегда находимся на связи.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="steps-btn">
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" target="_blank">Заказать</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Пакеты -->
-    <section class="packages" id="packages">
-        <div class="container">
-            <div class="section-title">
-                <h2>Пакетные предложения</h2>
-                <p>Готовые решения для квартир с отделкой. Стоимость указана за базовую комплектацию.</p>
-            </div>
-            <div class="package-tabs">
-                <button class="package-tab active" data-tab="studio">Студия</button>
-                <button class="package-tab" data-tab="1-room">1-комнатная</button>
-            </div>
-            <div class="packages-grid" id="packagesGrid">
-                <!-- Студия - Стандарт -->
-                <div class="package-card studio-package">
-                    <div class="package-header">
-                        <h3 class="package-name">Стандарт</h3>
-                        <div class="package-price">от 290 000 ₽</div>
-                        <a href="https://brwmebel.github.io/apartment-studio/" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Кухонный гарнитур прямой до 1800 мм</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка кухонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (2 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван еврокнижка</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол прямоугольный обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Студия - Комфорт -->
-                <div class="package-card studio-package" style="border: 2px solid var(--accent);">
-                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <h3 class="package-name">Комфорт</h3>
-                        <div class="package-price">от 450 000 ₽</div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект кухни (цвет фасадов на выбор)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск. камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск. камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка наклонная/встраиваемая</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван ортопедический (еврокнижка/аккордеон)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф распашной двухстворчатый (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод/тумба под ТВ (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, зеркалом и обувницей (на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 1-комнатная - Стандарт -->
-                <div class="package-card one-room-package" style="display: none;">
-                    <div class="package-header">
-                        <h3 class="package-name">Стандарт</h3>
-                        <div class="package-price">от 349 000 ₽</div>
-                        <a href="https://brwmebel.github.io/1_room/" class="btn" style="width: 100%;" target="_blank">Выбрать пакет</a>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной /кровать + матрас</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая с крючками для одежды, полкой для головных уборов и обувницей</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 1-комнатная - Комфорт -->
-                <div class="package-card one-room-package" style="display: none; border: 2px solid var(--accent);">
-                    <div class="package-header" style="background: linear-gradient(135deg, var(--primary), var(--primary-light));">
-                        <h3 class="package-name">Комфорт</h3>
-                        <div class="package-price">от 525 000 ₽</div>
-                        <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="width: 100%; background-color: var(--accent); color: var(--dark);" target="_blank">Выбрать пакет</a>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature-section">
-                            <h4>Кухня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Индивидуальный проект прямой кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Мойка иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Смеситель иск.камень</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Варочная панель электрическая (на выбор 2/4 комфорки)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Вытяжка встроенная/наклонная</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Холодильник отдельностоящий NO FROST</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Духовой шкаф встраиваемый</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Микроволновая печь</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стол обеденный (цвет модель на выбор)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Стулья 2 штуки (модель на выбор)</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Гостиная / Спальня</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тумба под тв / тумба комбинированная (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Карниз</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Тюль</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шторы светонепроницаемые блэкаут</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Диван раскладной ортопедический/кровать/кровать мягкая + матрас</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Шкаф трехстворчатый или 4х створчатый (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Комод (доводчики)</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>2 прикроватные тумбы</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>Прихожая</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Прихожая комбинированная/шкаф купе</span></div>
-                        </div>
-                        <div class="feature-section">
-                            <h4>В стоимость включены</h4>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Дизайн-проект</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div>
-                            <div class="feature"><i class="fas fa-check"></i> <span>Клининг</span></div>
-                        </div>
-                        <div class="feature-note">
-                            <i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры (Посуда, Чайник, постельное бельё и полотенца, утюг и гладильная доска, сушка для белья, мусорное ведро, ёршик, корзина для белья, декор) — от 19 900 ₽
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- НАШИ РАБОТЫ с галереей -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши работы</h2>
-                <p>Реализованные проекты по меблировке квартир под ключ</p>
-            </div>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">Все работы</button>
-                <button class="filter-btn" data-filter="full">Полная меблировка</button>
-                <button class="filter-btn" data-filter="kitchen">Кухни</button>
-                <button class="filter-btn" data-filter="wardrobe">Шкафы под заказ</button>
-                <button class="filter-btn" data-filter="bedroom">Спальни</button>
-            </div>
-            
-            <div class="portfolio-grid" id="portfolioGrid">
-                <!-- Проекты будут добавлены через JavaScript с данными для галереи -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Партнеры - бесконечная карусель -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши партнеры</h2>
-                <p>Работаем с проверенными производителями мебели и материалов</p>
-            </div>
-            <div class="partners-carousel-container">
-                <div class="partners-carousel-track" id="partnersTrack"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Свяжитесь с нами</h2>
-                <p>Если у вас остались вопросы, будем рады вам помочь!</p>
-            </div>
-            <div class="contact-buttons">
-                <a href="https://vk.com/im/convo/-96810994?entrypoint=community_page&tab=all" class="btn" style="background-color: white; color: var(--dark);" target="_blank">
-                    <i class="fab fa-vk"></i> Написать в ВК
-                </a>
-                <a href="https://max.ru/join/W7gxOs43siqiPCKZs_VJU28PikM6qGhBeLToP__C91k" class="btn" style="background-color: white; color: var(--dark);" target="_blank">
-                    <i class="fab fa-max"></i> Написать в MAX
-                </a>
-            </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600;">Адрес</div>
-                        <div>г. Кудрово, ул. Промышленная, д.3 к.3, этаж 2</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600;">Режим работы</div>
-                        <div>Пн-Пт: 9:00–20:00, Сб: 10:00–18:00</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <div style="font-weight: 600;">Email</div>
-                        <div>brwmebelspb@yandex.ru</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Футер -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div>
-                    <div class="footer-logo">Мебель и Стиль</div>
-                    <p>Профессиональная меблировка квартир под ключ. Работаем в Санкт-Петербурге с 2015 года.</p>
-                </div>
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Разделы</h3>
-                    <ul>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#styles">Стили мебели</a></li>
-                        <li><a href="#steps">Этапы</a></li>
-                        <li><a href="#packages">Пакеты</a></li>
-                        <li><a href="#portfolio">Наши работы</a></li>
-                        <li><a href="#partners">Партнеры</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Контакты</h3>
-                    <ul>
-                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i>+7 (812) 925 88-56</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i>brwmebelspb@yandex.ru</li>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>г. Кудрово, ул. Промышленная, д.3 к.3, этаж 2</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2026 Мебель и Стиль. Все права защищены.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Лайтбокс -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">&times;</button>
-            <button class="lightbox-prev" id="lightboxPrev">&lt;</button>
-            <img class="lightbox-img" id="lightboxImg" src="" alt="Фото проекта">
-            <button class="lightbox-next" id="lightboxNext">&gt;</button>
-            <div class="lightbox-counter" id="lightboxCounter"></div>
-        </div>
+    <!-- ЭТАПЫ РАБОТЫ -->
+    <section class="steps" id="steps"><div class="container"><div class="section-title"><h2>Как мы работаем</h2><p>Прозрачный процесс, в котором вы всегда в курсе происходящего.</p></div>
+    <div class="steps-container"><div class="steps-content"><div class="step-intro">Меблировка под ключ — это возможность получить готовый интерьер, не погружаясь в сотни технических нюансов. Мы берём на себя все заботы: от замеров до расстановки декора.</div>
+    <div class="step-item"><h3>Знакомство и замеры</h3><p>Обсуждаем ваши пожелания, анализируем особенности помещения, делаем точные замеры.</p></div>
+    <div class="step-item"><h3>Дизайн-концепция</h3><p>На этом этапе создается визуализация будущего интерьера, что позволяет заранее увидеть, как будет выглядеть пространство. Включает в себя 3D проект, подбор мебели, техники и материалов, а также расстановку в вашу планировку по чистовому обмеру квартиры.</p></div>
+    <div class="step-item"><h3>Договор и спецификация</h3><p>Согласовываем итоговый перечень позиций, подписываем договор. Вносится предоплата 50%.</p></div>
+    <div class="step-item"><h3>Комплектация и сборка</h3><p>Заказываем мебель и технику, доставляем на объект, выполняем сборку и подключение. Доводим интерьер до финального вида.</p></div>
+    <div class="step-item"><h3>Приёмка</h3><p>Вы принимаете готовый объект, подписываем закрывающие документы и передаём ключи.</p></div></div>
+    <div class="steps-right"><div class="steps-image">
+        <img src="image/IMG_8212.jpg" 
+             srcset="image/mobile/IMG_8212.webp 600w"
+             sizes="(max-width: 768px) 100vw, 50vw"
+             alt="Процесс работы над интерьером">
     </div>
+    <div class="steps-note"><p>Обычно полная комплектация студии или однокомнатной квартиры занимает около 4 недель — при условии выбора позиций со склада. Индивидуальные заказы могут увеличить срок.</p>
+    <p>Все этапы можно согласовывать удалённо. Мы регулярно направляем фото- и видеоотчёты, остаёмся на связи в удобных мессенджерах.</p></div></div></div>
+    <div class="steps-btn"><a href="https://vk.me/club96810994" class="btn" target="_blank">Начать проект</a></div></div></section>
+
+    <!-- ПАКЕТЫ -->
+    <section class="packages" id="packages"><div class="container"><div class="section-title"><h2>Готовые решения</h2><p>Два варианта комплектации для квартир с чистовой отделкой. Стоимость указана за базовый набор.</p></div>
+    <div class="package-tabs"><button class="package-tab active" data-tab="studio">Студия</button><button class="package-tab" data-tab="1-room">1-комнатная</button></div>
+    <div class="packages-grid" id="packagesGrid"></div></div></section>
+
+    <!-- НАШИ РАБОТЫ -->
+    <section class="portfolio" id="portfolio"><div class="container"><div class="section-title"><h2>Реализованные проекты</h2><p>Примеры готовых интерьеров — от небольших студий до просторных квартир.</p></div>
+    <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Все работы</button>
+        <button class="filter-btn" data-filter="full">Полная меблировка</button>
+        <button class="filter-btn" data-filter="kitchen">Кухни</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid"></div></div></section>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal" id="galleryModal"><div class="modal-content"><span class="modal-close" id="modalClose">&times;</span><h3 class="modal-title" id="modalTitle"></h3><p class="modal-desc" id="modalDesc"></p><div class="modal-gallery" id="modalGallery"></div></div></div>
+
+    <!-- СТИЛИ МЕБЕЛИ -->
+    <section class="styles" id="styles"><div class="container"><div class="section-title"><h2>Стилевые направления</h2><p>Единая концепция помогает создать гармоничное пространство, где все элементы дополняют друг друга.</p></div>
+    <div class="styles-container"><div class="style-tabs">
+        <button class="style-tab active" data-style="scandinavian">Скандинавский</button>
+        <button class="style-tab" data-style="modern">Современный</button>
+        <button class="style-tab" data-style="loft">Лофт</button>
+        <button class="style-tab" data-style="classic">Неоклассика</button>
+    </div>
+    <div class="style-content active" id="scandinavian"><div class="style-header"><div class="style-icon"><i class="fas fa-leaf" style="color:#8bb56a;"></i></div><div><h3 style="color:#8bb56a;">Скандинавский стиль</h3><p>Беспроигрышный вариант для аренды и быстрой продажи</p></div></div>
+    <p class="style-desc">Светлая гамма, натуральные фактуры и функциональная мебель без лишнего декора. Визуально расширяет пространство и создаёт ощущение уюта.</p>
+    <div class="style-features"><div class="style-feature"><i class="fas fa-check" style="color:#8bb56a;"></i><span>Светлые тона</span></div><div class="style-feature"><i class="fas fa-check" style="color:#8bb56a;"></i><span>Деревянные текстуры</span></div><div class="style-feature"><i class="fas fa-check" style="color:#8bb56a;"></i><span>Лаконичный текстиль</span></div><div class="style-feature"><i class="fas fa-check" style="color:#8bb56a;"></i><span>Умное хранение</span></div></div></div>
+    <div class="style-content" id="modern"><div class="style-header"><div class="style-icon"><i class="fas fa-cubes" style="color:#6c9ebf;"></i></div><div><h3 style="color:#6c9ebf;">Современный стиль</h3><p>Универсальное решение для жизни и инвестиций</p></div></div>
+    <p class="style-desc">Чёткие линии, нейтральная палитра, технологичные материалы. Идеальный баланс между эстетикой и практичностью.</p>
+    <div class="style-features"><div class="style-feature"><i class="fas fa-check" style="color:#6c9ebf;"></i><span>Спокойная гамма</span></div><div class="style-feature"><i class="fas fa-check" style="color:#6c9ebf;"></i><span>Модульная мебель</span></div><div class="style-feature"><i class="fas fa-check" style="color:#6c9ebf;"></i><span>Встроенная техника</span></div><div class="style-feature"><i class="fas fa-check" style="color:#6c9ebf;"></i><span>Эргономика</span></div></div></div>
+    <div class="style-content" id="loft"><div class="style-header"><div class="style-icon"><i class="fas fa-industry" style="color:#cd8a62;"></i></div><div><h3 style="color:#cd8a62;">Лофт</h3><p>Для тех, кто ценит свободу и индустриальную эстетику</p></div></div>
+    <p class="style-desc">Открытые планировки, грубые фактуры, сочетание металла, кирпича и дерева. Отлично работает в студиях и апартаментах. Идеальный выбор для меблировки апартаментов и креативных пространств.</p>
+    <div class="style-features"><div class="style-feature"><i class="fas fa-check" style="color:#cd8a62;"></i><span>Индустриальные материалы</span></div><div class="style-feature"><i class="fas fa-check" style="color:#cd8a62;"></i><span>Трансформируемая мебель</span></div><div class="style-feature"><i class="fas fa-check" style="color:#cd8a62;"></i><span>Акцентный свет</span></div><div class="style-feature"><i class="fas fa-check" style="color:#cd8a62;"></i><span>Открытое хранение</span></div></div></div>
+    <div class="style-content" id="classic"><div class="style-header"><div class="style-icon"><i class="fas fa-crown" style="color:#b88b8b;"></i></div><div><h3 style="color:#b88b8b;">Неоклассика</h3><p>Статусное решение для премиальной недвижимости</p></div></div>
+    <p class="style-desc">Элегантность, симметрия и благородные материалы. Повышает воспринимаемую стоимость объекта и привлекает взыскательных покупателей.</p>
+    <div class="style-features"><div class="style-feature"><i class="fas fa-check" style="color:#b88b8b;"></i><span>Натуральное дерево</span></div><div class="style-feature"><i class="fas fa-check" style="color:#b88b8b;"></i><span>Сдержанный декор</span></div><div class="style-feature"><i class="fas fa-check" style="color:#b88b8b;"></i><span>Качественная фурнитура</span></div><div class="style-feature"><i class="fas fa-check" style="color:#b88b8b;"></i><span>Благородные оттенки</span></div></div></div>
+    </div></div></section>
+
+    <!-- ПАРТНЕРЫ -->
+    <section class="partners" id="partners"><div class="container"><div class="section-title"><h2>С кем мы работаем</h2><p>Сотрудничаем с ведущими мебельными фабриками СПб и проверенными производителями, за качество которых мы ручаемся.</p></div>
+    <div class="partners-carousel-container"><div class="partners-carousel-track" id="partnersTrack"></div></div></div></section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="contact" id="contact"><div class="container"><div class="section-title"><h2>Остались вопросы?</h2><p>Свяжитесь с нами — поможем определиться с выбором и рассчитаем стоимость. Если вы ищете, где заказать полную меблировку квартиры в новостройке СПб — вы по адресу.</p></div>
+    <div class="contact-buttons">
+        <a href="https://vk.me/club96810994" class="btn" target="_blank"><i class="fab fa-vk"></i> Написать в ВК</a>
+        <a href="https://max.ru/join/W7gxOs43siqiPCKZs_VJU28PikM6qGhBeLToP__C91k" class="btn" target="_blank"><i class="fab fa-max"></i> Написать в MAX</a>
+    </div>
+    <div class="contact-info"><div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><div style="font-weight:600;">Адрес</div><div>г. Кудрово, ул. Промышленная, д.3 к.3, этаж 2</div></div></div>
+    <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><div style="font-weight:600;">Режим работы</div><div>Пн-Пт: 9:00–20:00, Сб: 10:00–18:00</div></div></div>
+    <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><div style="font-weight:600;">Email</div><div>brwmebelspb@yandex.ru</div></div></div></div></div></section>
+
+    <!-- ФУТЕР -->
+    <footer><div class="container"><div class="footer-container"><div><div class="footer-logo">Мебель и Стиль</div><p>Комплексная меблировка квартир в Санкт-Петербурге и области. Полная меблировка студий и 1-комнатных квартир под ключ. На рынке с 2015 года.</p></div>
+    <div><h3 style="color:white;margin-bottom:20px;">Разделы</h3><ul><li><a href="#about">О нас</a></li><li><a href="#steps">Этапы</a></li><li><a href="#packages">Пакеты</a></li><li><a href="#portfolio">Проекты</a></li><li><a href="#styles">Стили</a></li><li><a href="#partners">Партнёры</a></li></ul></div>
+    <div><h3 style="color:white;margin-bottom:20px;">Контакты</h3><ul><li><i class="fas fa-phone" style="margin-right:10px;"></i>+7 (812) 925 88-56</li><li><i class="fas fa-envelope" style="margin-right:10px;"></i>brwmebelspb@yandex.ru</li><li><i class="fas fa-map-marker-alt" style="margin-right:10px;"></i>г. Кудрово, ул. Промышленная, д.3 к.3, этаж 2</li></ul></div></div><div class="copyright">© 2026 Мебель и Стиль. Все права защищены.</div></div></footer>
 
     <script>
-        // Переключение темы
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const themeIcon = themeToggle.querySelector('i');
+        (function() {
+            // Тема
+            const themeToggle = document.getElementById('themeToggle'), body = document.body, themeIcon = themeToggle.querySelector('i');
+            if (localStorage.getItem('theme') === 'dark') { body.classList.add('dark-theme'); themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); }
+            themeToggle.addEventListener('click', () => { body.classList.toggle('dark-theme'); if (body.classList.contains('dark-theme')) { themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun'); localStorage.setItem('theme','dark'); } else { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); localStorage.setItem('theme','light'); } });
 
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-theme');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-
-        themeToggle.addEventListener('click', function() {
-            body.classList.toggle('dark-theme');
+            // Карусель (с MOBILE-фотками через data-mobile)
+            const carouselImages = [
+                { src: 'image/лицо карусель/300.jpg', mobile: 'image/mobile/лицо карусель/300.webp', alt: 'Интерьер 1' },
+                { src: 'image/лицо карусель/301.jpg', mobile: 'image/mobile/лицо карусель/301.webp', alt: 'Интерьер 2' },
+                { src: 'image/лицо карусель/302.jpg', mobile: 'image/mobile/лицо карусель/302.webp', alt: 'Интерьер 3' },
+                { src: 'image/лицо карусель/303.jpg', mobile: 'image/mobile/лицо карусель/303.webp', alt: 'Интерьер 4' },
+                { src: 'image/лицо карусель/304.jpeg', mobile: 'image/mobile/лицо карусель/304.webp', alt: 'Интерьер 5' },
+                { src: 'image/лицо карусель/305.jpeg', mobile: 'image/mobile/лицо карусель/305.webp', alt: 'Интерьер 6' },
+                { src: 'image/лицо карусель/306.jpeg', mobile: 'image/mobile/лицо карусель/306.webp', alt: 'Интерьер 7' }
+            ];
+            const track = document.getElementById('carouselTrack'), dotsContainer = document.getElementById('carouselDots'), wrapper = document.getElementById('carouselWrapper');
+            const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
             
-            if (body.classList.contains('dark-theme')) {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Данные для карусели
-        const images = [
-            { src: 'image/photo_5296549619733042398_y (1).jpg', alt: 'Интерьер 1' },
-            { src: 'image/photo_5296549619733042394_y (1).jpg', alt: 'Интерьер 3' },
-            { src: 'image/photo_5296549619733042395_y.jpg', alt: 'Интерьер 4' },
-            { src: 'image/photo_5296549619733042393_y.jpg', alt: 'Интерьер 2' },
-            { src: 'image/photo_5296549619733042397_y.jpg', alt: 'Интерьер 5' },
-            { src: 'image/IMG_8213.jpg', alt: 'Интерьер 6' }
-        ];
-
-        // Создаем карусель
-        const track = document.getElementById('carouselTrack');
-        const dotsContainer = document.getElementById('carouselDots');
-        const wrapper = document.getElementById('carouselWrapper');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        // Создаем слайды
-        images.forEach((img, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'carousel-slide';
-            slide.setAttribute('data-index', index);
+            // Определяем, мобильное ли устройство
+            const isMobile = window.innerWidth <= 768;
             
-            const imgElement = document.createElement('img');
-            imgElement.src = img.src;
-            imgElement.alt = img.alt;
-            imgElement.onerror = function() {
-                this.src = 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22 viewBox=%220 0 100 100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22' + 
-                    (index === 0 ? '%231a3b2e' : index === 1 ? '%23d4b68a' : '%232a5a45') + 
-                    '%22/><text x=%2250%22 y=%2250%22 font-size=%2214%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22>' + 
-                    img.src + '</text></svg>';
-            };
-            
-            slide.appendChild(imgElement);
-            track.appendChild(slide);
-        });
-
-        // Создаем точки
-        images.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.className = 'dot' + (index === 0 ? ' active' : '');
-            dot.setAttribute('data-index', index);
-            dotsContainer.appendChild(dot);
-        });
-
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.dot');
-
-        let currentIndex = 0;
-        let isDragging = false;
-        let startX = 0;
-        let currentX = 0;
-        let dragStartTime = 0;
-        let dragDistance = 0;
-        let dragStartOffset = 0;
-
-        function updateActiveSlide() {
-            slides.forEach((slide, index) => {
-                if (index === currentIndex) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
+            carouselImages.forEach((img, idx) => { 
+                let slide = document.createElement('div'); 
+                slide.className = 'carousel-slide'; 
+                let imgEl = document.createElement('img'); 
+                // Используем мобильную версию если экран маленький
+                imgEl.src = isMobile && img.mobile ? img.mobile : img.src; 
+                imgEl.alt = img.alt; 
+                imgEl.loading = 'lazy'; 
+                imgEl.onerror = function() { 
+                    this.src = img.src; // Фолбэк на основное фото
+                    this.onerror = function() { 
+                        this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="%231a3b2e"/><text x="50" y="50" font-size="14" text-anchor="middle" dy=".3em" fill="white">Фото '+(idx+1)+'</text></svg>'; 
+                    };
+                }; 
+                slide.appendChild(imgEl); 
+                track.appendChild(slide); 
             });
             
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        }
+            carouselImages.forEach((_, idx) => { let dot = document.createElement('span'); dot.className = 'dot' + (idx===0?' active':''); dot.setAttribute('data-index',idx); dotsContainer.appendChild(dot); });
+            let slides = document.querySelectorAll('.carousel-slide'), dots = document.querySelectorAll('.dot'), currentIndex = 0, isDragging = false, startX = 0, dragStartOffset = 0;
+            function updateActiveSlide() { slides.forEach((s,i)=>i===currentIndex?s.classList.add('active'):s.classList.remove('active')); dots.forEach((d,i)=>d.classList.toggle('active',i===currentIndex)); }
+            function updateCarousel(animate=true) { if(!animate) track.style.transition='none'; else track.style.transition='transform 0.7s cubic-bezier(0.16,1,0.3,1)'; let slideWidth=slides[0].offsetWidth+16, wrapperWidth=wrapper.offsetWidth, offset=(currentIndex*slideWidth)-(wrapperWidth/2-slides[0].offsetWidth/2); track.style.transform=`translateX(-${Math.max(0,offset)}px)`; updateActiveSlide(); }
+            prevBtn.addEventListener('click',()=>{ currentIndex = currentIndex>0?currentIndex-1:slides.length-1; updateCarousel(); });
+            nextBtn.addEventListener('click',()=>{ currentIndex = currentIndex<slides.length-1?currentIndex+1:0; updateCarousel(); });
+            dots.forEach((d,i)=>d.addEventListener('click',()=>{ currentIndex=i; updateCarousel(); }));
+            wrapper.addEventListener('mousedown',e=>{ isDragging=true; startX=e.pageX; let t=getComputedStyle(track).transform; dragStartOffset = t!=='none'? -new DOMMatrix(t).m41:0; track.style.transition='none'; wrapper.style.cursor='grabbing'; e.preventDefault(); });
+            window.addEventListener('mousemove',e=>{ if(!isDragging) return; let diff=e.pageX-startX; let newOffset=dragStartOffset-diff, maxOffset=(slides.length-1)*(slides[0].offsetWidth+16); track.style.transform=`translateX(-${Math.max(0,Math.min(maxOffset,newOffset))}px)`; });
+            window.addEventListener('mouseup',()=>{ if(!isDragging) return; isDragging=false; track.style.transition='transform 0.7s cubic-bezier(0.16,1,0.3,1)'; wrapper.style.cursor='grab'; let slideWidth=slides[0].offsetWidth+16, newIdx=Math.round(Math.abs(parseFloat(track.style.transform.replace('translateX(-','')))/slideWidth); if(newIdx!==currentIndex && newIdx>=0 && newIdx<slides.length) currentIndex=newIdx; updateCarousel(); });
+            window.addEventListener('resize',()=>updateCarousel(false));
+            setTimeout(()=>updateCarousel(false),100);
 
-        function updateCarousel(animate = true) {
-            if (!animate) {
-                track.style.transition = 'none';
-            } else {
-                track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
+            // Стили табы
+            document.querySelectorAll('.style-tab').forEach(tab=>{ tab.addEventListener('click',function(){ document.querySelectorAll('.style-tab').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.style-content').forEach(c=>c.classList.remove('active')); this.classList.add('active'); document.getElementById(this.dataset.style).classList.add('active'); }); });
+
+            // Пакеты
+            const packagesGrid = document.getElementById('packagesGrid');
+            if(packagesGrid){
+                packagesGrid.innerHTML = `
+                <div class="package-card studio-package"><div class="package-header"><h3 class="package-name">Стандарт</h3><div class="package-price">от 349 000 ₽</div><a href="https://brwmebel.github.io/apartment-studio/" class="btn" style="width:100%;" target="_blank">Выбрать пакет</a></div><div class="package-features"><div class="feature-section"><h4>Кухня</h4><div class="feature"><i class="fas fa-check"></i><span>Кухонный гарнитур прямой до 1800 мм</span></div><div class="feature"><i class="fas fa-check"></i><span>Мойка кухонная</span></div><div class="feature"><i class="fas fa-check"></i><span>Смеситель</span></div><div class="feature"><i class="fas fa-check"></i><span>Варочная панель электрическая (2 комфорки)</span></div><div class="feature"><i class="fas fa-check"></i><span>Микроволновая печь</span></div><div class="feature"><i class="fas fa-check"></i><span>Вытяжка наклонная/встраиваемая</span></div><div class="feature"><i class="fas fa-check"></i><span>Холодильник отдельностоящий</span></div><div class="feature"><i class="fas fa-check"></i><span>Карниз</span></div><div class="feature"><i class="fas fa-check"></i><span>Тюль</span></div><div class="feature"><i class="fas fa-check"></i><span>Шторы светонепроницаемые блэкаут</span></div></div><div class="feature-section"><h4>Гостиная / Спальня</h4><div class="feature"><i class="fas fa-check"></i><span>Диван еврокнижка</span></div><div class="feature"><i class="fas fa-check"></i><span>Шкаф распашной двухстворчатый</span></div><div class="feature"><i class="fas fa-check"></i><span>Комод/тумба под ТВ</span></div><div class="feature"><i class="fas fa-check"></i><span>Стол прямоугольный обеденный</span></div><div class="feature"><i class="fas fa-check"></i><span>Стулья 2 штуки</span></div></div><div class="feature-section"><h4>Прихожая</h4><div class="feature"><i class="fas fa-check"></i><span>Прихожая с крючками для одежды, зеркалом и обувницей</span></div></div><div class="feature-section"><h4>В стоимость включены</h4><div class="feature"><i class="fas fa-check"></i><span>Дизайн-проект</span></div><div class="feature"><i class="fas fa-check"></i><span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Клининг</span></div></div><div class="feature-note"><i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры — от 24 900 ₽</div></div></div>
+                <div class="package-card studio-package comfort-package"><div class="package-header"><h3 class="package-name">Комфорт</h3><div class="package-price">от 450 000 ₽</div><a href="https://vk.me/club96810994" class="btn" style="width:100%;" target="_blank">Выбрать пакет</a></div><div class="package-features"><div class="feature-section"><h4>Кухня</h4><div class="feature"><i class="fas fa-check"></i><span>Индивидуальный проект кухни (цвет фасадов на выбор)</span></div><div class="feature"><i class="fas fa-check"></i><span>Мойка иск. камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Смеситель иск. камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Варочная панель электрическая</span></div><div class="feature"><i class="fas fa-check"></i><span>Микроволновая печь</span></div><div class="feature"><i class="fas fa-check"></i><span>Вытяжка наклонная/встраиваемая</span></div><div class="feature"><i class="fas fa-check"></i><span>Духовой шкаф встраиваемый</span></div><div class="feature"><i class="fas fa-check"></i><span>Холодильник отдельностоящий NO FROST</span></div><div class="feature"><i class="fas fa-check"></i><span>Карниз</span></div><div class="feature"><i class="fas fa-check"></i><span>Тюль</span></div><div class="feature"><i class="fas fa-check"></i><span>Шторы светонепроницаемые блэкаут</span></div></div><div class="feature-section"><h4>Гостиная / Спальня</h4><div class="feature"><i class="fas fa-check"></i><span>Диван ортопедический (еврокнижка/аккордеон)</span></div><div class="feature"><i class="fas fa-check"></i><span>Шкаф распашной двухстворчатый (доводчики)</span></div><div class="feature"><i class="fas fa-check"></i><span>Комод/тумба под ТВ (доводчики)</span></div><div class="feature"><i class="fas fa-check"></i><span>Стол обеденный</span></div><div class="feature"><i class="fas fa-check"></i><span>Стулья 2 штуки</span></div></div><div class="feature-section"><h4>Прихожая</h4><div class="feature"><i class="fas fa-check"></i><span>Прихожая с крючками для одежды, зеркалом и обувницей (на выбор)</span></div></div><div class="feature-section"><h4>В стоимость включены</h4><div class="feature"><i class="fas fa-check"></i><span>Дизайн-проект</span></div><div class="feature"><i class="fas fa-check"></i><span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Клининг</span></div></div><div class="feature-note"><i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры — от 24 900 ₽</div></div></div>
+                <div class="package-card one-room-package" style="display:none;"><div class="package-header"><h3 class="package-name">Стандарт</h3><div class="package-price">от 399 000 ₽</div><a href="https://brwmebel.github.io/1_room/" class="btn" style="width:100%;" target="_blank">Выбрать пакет</a></div><div class="package-features"><div class="feature-section"><h4>Кухня</h4><div class="feature"><i class="fas fa-check"></i><span>Индивидуальный проект прямой кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Мойка иск.камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Смеситель иск.камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Варочная панель электрическая</span></div><div class="feature"><i class="fas fa-check"></i><span>Вытяжка встроенная/наклонная</span></div><div class="feature"><i class="fas fa-check"></i><span>Холодильник отдельностоящий</span></div><div class="feature"><i class="fas fa-check"></i><span>Микроволновая печь</span></div><div class="feature"><i class="fas fa-check"></i><span>Стол обеденный</span></div><div class="feature"><i class="fas fa-check"></i><span>Стулья 2 штуки (модель на выбор)</span></div></div><div class="feature-section"><h4>Гостиная / Спальня</h4><div class="feature"><i class="fas fa-check"></i><span>Тумба под тв</span></div><div class="feature"><i class="fas fa-check"></i><span>Карниз</span></div><div class="feature"><i class="fas fa-check"></i><span>Тюль</span></div><div class="feature"><i class="fas fa-check"></i><span>Шторы светонепроницаемые блэкаут</span></div><div class="feature"><i class="fas fa-check"></i><span>Диван раскладной /кровать + матрас</span></div><div class="feature"><i class="fas fa-check"></i><span>Шкаф трехстворчатый или 4х створчатый</span></div><div class="feature"><i class="fas fa-check"></i><span>Комод</span></div><div class="feature"><i class="fas fa-check"></i><span>2 прикроватные тумбы</span></div></div><div class="feature-section"><h4>Прихожая</h4><div class="feature"><i class="fas fa-check"></i><span>Прихожая с крючками для одежды, полкой для головных уборов и обувницей</span></div></div><div class="feature-section"><h4>В стоимость включены</h4><div class="feature"><i class="fas fa-check"></i><span>Дизайн-проект</span></div><div class="feature"><i class="fas fa-check"></i><span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Клининг</span></div></div><div class="feature-note"><i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры — от 24 900 ₽</div></div></div>
+                <div class="package-card one-room-package comfort-package" style="display:none;"><div class="package-header"><h3 class="package-name">Комфорт</h3><div class="package-price">от 525 000 ₽</div><a href="https://vk.me/club96810994" class="btn" style="width:100%;" target="_blank">Выбрать пакет</a></div><div class="package-features"><div class="feature-section"><h4>Кухня</h4><div class="feature"><i class="fas fa-check"></i><span>Индивидуальный проект прямой кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Мойка иск.камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Смеситель иск.камень</span></div><div class="feature"><i class="fas fa-check"></i><span>Варочная панель электрическая</span></div><div class="feature"><i class="fas fa-check"></i><span>Вытяжка встроенная/наклонная</span></div><div class="feature"><i class="fas fa-check"></i><span>Холодильник отдельностоящий NO FROST</span></div><div class="feature"><i class="fas fa-check"></i><span>Духовой шкаф встраиваемый</span></div><div class="feature"><i class="fas fa-check"></i><span>Микроволновая печь</span></div><div class="feature"><i class="fas fa-check"></i><span>Стол обеденный (цвет модель на выбор)</span></div><div class="feature"><i class="fas fa-check"></i><span>Стулья 2 штуки (модель на выбор)</span></div></div><div class="feature-section"><h4>Гостиная / Спальня</h4><div class="feature"><i class="fas fa-check"></i><span>Тумба под тв / тумба комбинированная (доводчики)</span></div><div class="feature"><i class="fas fa-check"></i><span>Карниз</span></div><div class="feature"><i class="fas fa-check"></i><span>Тюль</span></div><div class="feature"><i class="fas fa-check"></i><span>Шторы светонепроницаемые блэкаут</span></div><div class="feature"><i class="fas fa-check"></i><span>Диван раскладной ортопедический/кровать/кровать мягкая + матрас</span></div><div class="feature"><i class="fas fa-check"></i><span>Шкаф трехстворчатый или 4х створчатый (доводчики)</span></div><div class="feature"><i class="fas fa-check"></i><span>Комод (доводчики)</span></div><div class="feature"><i class="fas fa-check"></i><span>2 прикроватные тумбы</span></div></div><div class="feature-section"><h4>Прихожая</h4><div class="feature"><i class="fas fa-check"></i><span>Прихожая комбинированная/шкаф купе</span></div></div><div class="feature-section"><h4>В стоимость включены</h4><div class="feature"><i class="fas fa-check"></i><span>Дизайн-проект</span></div><div class="feature"><i class="fas fa-check"></i><span>Доставка, сборка и установка, перенос точек электричества в зоне кухни</span></div><div class="feature"><i class="fas fa-check"></i><span>Клининг</span></div></div><div class="feature-note"><i class="fas fa-plus-circle"></i> Дополнительные услуги по согласованию: Расширенный комплект для подготовки квартиры — от 24 900 ₽</div></div></div>`;
+                document.querySelectorAll('.package-tab').forEach(t=>t.addEventListener('click',function(){ document.querySelectorAll('.package-tab').forEach(tt=>tt.classList.remove('active')); this.classList.add('active'); let isStudio=this.dataset.tab==='studio'; document.querySelectorAll('.studio-package').forEach(p=>p.style.display=isStudio?'block':'none'); document.querySelectorAll('.one-room-package').forEach(p=>p.style.display=isStudio?'none':'block'); })); 
             }
-            
-            const slideWidth = slides[0].offsetWidth + 20;
-            const wrapperWidth = wrapper.offsetWidth;
-            
-            const offset = (currentIndex * slideWidth) - (wrapperWidth / 2 - slides[0].offsetWidth / 2);
-            
-            track.style.transform = `translateX(-${Math.max(0, offset)}px)`;
-            
-            updateActiveSlide();
-        }
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = slides.length - 1;
-            }
-            updateCarousel();
-        });
+            // === ПОРТФОЛИО ===
+            function getGallery(folder, start, end, ext) { let photos = []; for (let i = start; i <= end; i++) photos.push({ src: `image/полная меблировка/${folder}/${i}.${ext}`, mobile: `image/mobile/полная меблировка/${folder}/${i}.webp` }); return photos; }
+            function getKitchenGallery(projectNum, start, end, ext) { let photos = []; for (let i = start; i <= end; i++) photos.push({ src: `image/кухни/проект${projectNum}/${i}.${ext}`, mobile: `image/mobile/кухни/проект${projectNum}/${i}.webp` }); return photos; }
 
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < slides.length - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            updateCarousel();
-        });
+            const fullProjects = [
+                { id: 1, title: "Студия ЖК «Сенат»", description: "Комплектация 24,2 м². Современное решение с кухней-гостиной, диваном и системой хранения.", tags: ["24,2 м²", "Студия"], category: "full", gallery: getGallery("студия универ сити", 200, 239, "jpg") },
+                { id: 2, title: "1-к квартира ЖК «Универ Сити»", description: "Комплектация 33,71 м². Кухня-гостиная, отдельная спальня и вместительная прихожая.", tags: ["33,71 м²", "1-комнатная"], category: "full", gallery: getGallery("1 к кв универ сити", 1, 18, "jpeg") },
+                { id: 3, title: "Студия ЖК «Универ Сити»", description: "Комплектация 26,2 м². Функциональная планировка с кухонной зоной, диваном и местом для хранения.", tags: ["26,2 м²", "Студия"], category: "full", gallery: (() => { let p = []; for (let i = 100; i <= 119; i++) p.push({ src: `image/полная меблировка/студия сенат/${i}.${i===100?'jfif':'jpeg'}`, mobile: `image/mobile/полная меблировка/студия сенат/${i}.webp` }); return p; })() }
+            ];
 
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel();
-            });
-        });
+            const kitchenProjects = [
+                { id: 4, title: "Кухня №1", description: "Современная кухня с островом. Фасады МДФ, столешница из искусственного камня, встроенная техника.", tags: ["Кухня", "Современный стиль"], category: "kitchen", gallery: getKitchenGallery(1, 400, 403, "jpg") },
+                { id: 5, title: "Кухня №2", description: "Светлая кухня с продуманной эргономикой. Удобное хранение и качественная бытовая техника.", tags: ["Кухня", "Светлые тона"], category: "kitchen", gallery: getKitchenGallery(2, 500, 509, "jpg") },
+                { id: 6, title: "Кухня №3", description: "Лаконичная современная кухня. Фасады МДФ, столешница из искусственного камня.", tags: ["Кухня", "Современный стиль"], category: "kitchen", gallery: getKitchenGallery(3, 600, 612, "jpg") },
+                { id: 7, title: "Кухня №4", description: "Кухня в светлой гамме. Эргономичная планировка и вместительные системы хранения.", tags: ["Кухня", "Светлые тона"], category: "kitchen", gallery: getKitchenGallery(4, 700, 706, "webp") }
+            ];
 
-        wrapper.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX;
-            dragStartTime = Date.now();
-            dragDistance = 0;
+            const allProjects = [...fullProjects, ...kitchenProjects];
+            const portfolioGridEl = document.getElementById('portfolioGrid');
+            const modal = document.getElementById('galleryModal'), modalTitle = document.getElementById('modalTitle'), modalDesc = document.getElementById('modalDesc'), modalGallery = document.getElementById('modalGallery'), modalClose = document.getElementById('modalClose');
             
-            const transform = getComputedStyle(track).transform;
-            if (transform !== 'none') {
-                const matrix = new DOMMatrix(transform);
-                dragStartOffset = -matrix.m41 || 0;
-            } else {
-                dragStartOffset = 0;
+            const isMobilePortfolio = window.innerWidth <= 768;
+            
+            function openModal(p) { 
+                modalTitle.textContent = p.title; 
+                modalDesc.textContent = p.description; 
+                modalGallery.innerHTML = ''; 
+                p.gallery.forEach(srcObj => { 
+                    let i = document.createElement('img'); 
+                    i.src = isMobilePortfolio && srcObj.mobile ? srcObj.mobile : srcObj.src; 
+                    i.alt = p.title; 
+                    i.loading = 'lazy'; 
+                    i.onerror = function() { this.src = srcObj.src; }; 
+                    modalGallery.appendChild(i); 
+                }); 
+                modal.classList.add('active'); 
+                document.body.style.overflow = 'hidden'; 
             }
             
-            track.style.transition = 'none';
-            wrapper.style.cursor = 'grabbing';
-            e.preventDefault();
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
+            function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
+            modalClose.addEventListener('click', closeModal); 
+            modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+            document.addEventListener('keydown', e => { if(modal.classList.contains('active') && e.key === 'Escape') closeModal(); });
             
-            currentX = e.pageX;
-            const diff = currentX - startX;
-            dragDistance = diff;
-            
-            const newOffset = dragStartOffset - diff;
-            
-            const maxOffset = (slides.length - 1) * (slides[0].offsetWidth + 20);
-            const minOffset = 0;
-            
-            track.style.transform = `translateX(-${Math.max(minOffset, Math.min(maxOffset, newOffset))}px)`;
-        });
-
-        window.addEventListener('mouseup', (e) => {
-            if (!isDragging) return;
-            isDragging = false;
-            
-            const dragDuration = Date.now() - dragStartTime;
-            const dragSpeed = Math.abs(dragDistance) / dragDuration;
-            
-            track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-            wrapper.style.cursor = 'grab';
-            
-            if (Math.abs(dragDistance) > 80 || dragSpeed > 0.3) {
-                if (dragDistance > 0 && currentIndex > 0) {
-                    currentIndex--;
-                } else if (dragDistance < 0 && currentIndex < slides.length - 1) {
-                    currentIndex++;
-                } else if (dragDistance > 0 && currentIndex === 0) {
-                    currentIndex = slides.length - 1;
-                } else if (dragDistance < 0 && currentIndex === slides.length - 1) {
-                    currentIndex = 0;
-                }
+            function renderPortfolio(filter = 'all') { 
+                portfolioGridEl.innerHTML = ''; 
+                let f = filter === 'all' ? allProjects : allProjects.filter(p => p.category === filter); 
+                f.forEach(proj => { 
+                    let item = document.createElement('div'); 
+                    item.className = 'portfolio-item'; 
+                    const firstImg = proj.gallery[0];
+                    const imgSrc = isMobilePortfolio && firstImg.mobile ? firstImg.mobile : firstImg.src;
+                    item.innerHTML = `<div class="portfolio-img"><img src="${imgSrc}" alt="${proj.title}" loading="lazy" onerror="this.src='${firstImg.src}'"></div><div class="portfolio-info"><h3>${proj.title}</h3><p>${proj.description}</p><div class="portfolio-tags">${proj.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div></div>`; 
+                    item.addEventListener('click', () => openModal(proj)); 
+                    portfolioGridEl.appendChild(item); 
+                }); 
             }
             
-            updateCarousel();
-            dragDistance = 0;
-        });
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', function() { document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderPortfolio(this.dataset.filter); }));
+            renderPortfolio('all');
 
-        window.addEventListener('resize', () => {
-            updateCarousel(false);
-        });
-
-        setTimeout(() => {
-            updateCarousel(false);
-        }, 100);
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        const styleTabs = document.querySelectorAll('.style-tab');
-        const styleContents = document.querySelectorAll('.style-content');
-        
-        styleTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                styleTabs.forEach(t => t.classList.remove('active'));
-                styleContents.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                const styleId = this.getAttribute('data-style');
-                document.getElementById(styleId).classList.add('active');
-            });
-        });
-
-        // Переключение пакетов
-        const packageTabs = document.querySelectorAll('.package-tab');
-        const studioPackages = document.querySelectorAll('.studio-package');
-        const oneRoomPackages = document.querySelectorAll('.one-room-package');
-        
-        packageTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                packageTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                const tabValue = this.getAttribute('data-tab');
-                
-                if (tabValue === 'studio') {
-                    studioPackages.forEach(pkg => pkg.style.display = 'block');
-                    oneRoomPackages.forEach(pkg => pkg.style.display = 'none');
-                } else {
-                    studioPackages.forEach(pkg => pkg.style.display = 'none');
-                    oneRoomPackages.forEach(pkg => pkg.style.display = 'block');
-                }
-            });
-        });
-
-        // --- Данные для портфолио с галереями ---
-        // Собираем все существующие фото из карусели и другие доступные
-        const existingImages = [
-            'image/photo_5296549619733042398_y (1).jpg',
-            'image/photo_5296549619733042394_y (1).jpg',
-            'image/photo_5296549619733042395_y.jpg',
-            'image/photo_5296549619733042393_y.jpg',
-            'image/photo_5296549619733042397_y.jpg',
-            'image/IMG_8213.jpg',
-            'image/IMG_8212.jpg',
-            'image/photo_5233431171193051302_y.jpg'
-        ];
-        
-        // Создаем 10 фото для каждого проекта (повторяем существующие)
-        function getDemoPhotos(count = 10) {
-            const photos = [];
-            for (let i = 0; i < count; i++) {
-                photos.push(existingImages[i % existingImages.length]);
-            }
-            return photos;
-        }
-        
-        const projectsData = [
-            {
-                id: 1,
-                title: "Студия в центре Санкт-Петербурга",
-                description: "Комплектация квартиры 35 м² в скандинавском стиле. Включает кухню-гостиную, спальную зону и систему хранения.",
-                tags: ["35 м²", "Студия", "Полная меблировка"],
-                category: "full",
-                previewBg: "linear-gradient(135deg, #a5d8ff, #74c0fc)",
-                previewIcon: "fas fa-couch",
-                gallery: getDemoPhotos(12)
-            },
-            {
-                id: 2,
-                title: "1-комнатная квартира на Васильевском острове",
-                description: "Полная меблировка современной квартиры 48 м². Интегрированные системы хранения, умная техника.",
-                tags: ["48 м²", "1-комнатная", "Полная меблировка"],
-                category: "full",
-                previewBg: "linear-gradient(135deg, #ffd8a8, #ffa94d)",
-                previewIcon: "fas fa-bed",
-                gallery: getDemoPhotos(10)
-            },
-            {
-                id: 3,
-                title: "Современная кухня с островом",
-                description: "Индивидуальный проект кухни с островом и встроенной техникой. Фасады из МДФ, столешница из искусственного камня.",
-                tags: ["Кухня", "12 м²", "Индивидуальный проект"],
-                category: "kitchen",
-                previewBg: "linear-gradient(135deg, #b2f2bb, #69db7c)",
-                previewIcon: "fas fa-utensils",
-                gallery: getDemoPhotos(15)
-            },
-            {
-                id: 4,
-                title: "Шкаф-купе в спальню",
-                description: "Встроенный шкаф-купе с зеркальными фасадами. Внутреннее наполнение под заказ: штанги, выдвижные ящики, полки.",
-                tags: ["Шкаф-купе", "2.5 м", "Зеркальные фасады"],
-                category: "wardrobe",
-                previewBg: "linear-gradient(135deg, #d0bfff, #9775fa)",
-                previewIcon: "fas fa-wardrobe",
-                gallery: getDemoPhotos(10)
-            },
-            {
-                id: 5,
-                title: "Спальня в скандинавском стиле",
-                description: "Комплект спальной мебели: кровать с подъемным механизмом, две прикроватные тумбы, комод. Массив сосны.",
-                tags: ["Спальня", "Скандинавский стиль", "Массив сосны"],
-                category: "bedroom",
-                previewBg: "linear-gradient(135deg, #ffc9c9, #ff6b6b)",
-                previewIcon: "fas fa-bed",
-                gallery: getDemoPhotos(12)
-            },
-            {
-                id: 6,
-                title: "Кухня в новостройке",
-                description: "Типовой проект кухни для новостройки. Эргономичная планировка, современная техника, системы хранения.",
-                tags: ["Кухня", "Новостройка", "Современный стиль"],
-                category: "kitchen",
-                previewBg: "linear-gradient(135deg, #a3daff, #4dabf7)",
-                previewIcon: "fas fa-home",
-                gallery: getDemoPhotos(12)
-            }
-        ];
-        
-        // Рендерим портфолио
-        const portfolioGrid = document.getElementById('portfolioGrid');
-        
-        function renderPortfolio(filter = 'all') {
-            portfolioGrid.innerHTML = '';
-            const filteredProjects = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
-            
-            filteredProjects.forEach(project => {
-                const item = document.createElement('div');
-                item.className = 'portfolio-item';
-                item.setAttribute('data-category', project.category);
-                item.setAttribute('data-id', project.id);
-                
-                item.innerHTML = `
-                    <div class="portfolio-img">
-                        <div style="width: 100%; height: 100%; background: ${project.previewBg}; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
-                            <i class="${project.previewIcon}"></i>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
-                        <div class="portfolio-tags">
-                            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
-                
-                item.addEventListener('click', () => openLightbox(project.gallery, 0));
-                portfolioGrid.appendChild(item);
-            });
-            
-            // Анимация появления
-            document.querySelectorAll('.portfolio-item').forEach((item, idx) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    item.style.transition = 'opacity 0.3s, transform 0.3s';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, idx * 50);
-            });
-        }
-        
-        // Лайтбокс
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        const lightboxCounter = document.getElementById('lightboxCounter');
-        
-        let currentGallery = [];
-        let currentImageIndex = 0;
-        
-        function openLightbox(gallery, index) {
-            currentGallery = gallery;
-            currentImageIndex = index;
-            updateLightboxImage();
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function updateLightboxImage() {
-            lightboxImg.src = currentGallery[currentImageIndex];
-            lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
-        }
-        
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateLightboxImage();
-        }
-        
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            updateLightboxImage();
-        }
-        
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxPrev.addEventListener('click', prevImage);
-        lightboxNext.addEventListener('click', nextImage);
-        
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox();
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') prevImage();
-            if (e.key === 'ArrowRight') nextImage();
-        });
-        
-        // Фильтрация портфолио
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.getAttribute('data-filter');
-                renderPortfolio(filter);
-            });
-        });
-        
-        // Инициализация портфолио
-        renderPortfolio('all');
-        
-        // --- Карусель партнеров (12 партнеров) ---
-        const partnersData = [
-            { name: "БРВ Мебель", desc: "Белорусская мебель премиум-класса" },
-            { name: "K2 Мебель", desc: "Современная мебель для дома и офиса" },
-            { name: "Мебель Виват", desc: "Кухни и мебель на заказ" },
-            { name: "Глазов-мебель", desc: "Классическая и современная мебель" },
-            { name: "ivaru", desc: "Корпусная мебель от производителя" },
-            { name: "Mebelgrad", desc: "Мебельный гипермаркет" },
-            { name: "Natura Vera", desc: "Натуральная мебель из массива" },
-            { name: "Pinskdrev", desc: "Крупнейший производитель ДСП и мебели" },
-            { name: "Gomeldrev", desc: "Белорусская мебель из массива" },
-            { name: "Green Mebel", desc: "Мебель из массива сосны" },
-            { name: "Corretto", desc: "Фабрика матрасов и кроватей" },
-            { name: "SRP Mebel", desc: "Мебель на металлокаркасе с 1997 года" }
-        ];
-        
-        const partnersTrackEl = document.getElementById('partnersTrack');
-        const colors = ['#1a3b2e', '#2a5a45', '#3d7a5a', '#5a9b6e', '#4a7c5c', '#3b6a4a', '#2c5a3e', '#1e4a32', '#2a6a4a', '#3e7a5a', '#2e5a4a', '#1e3e2e'];
-        
-        function createPartnerCard(partner, idx) {
-            const card = document.createElement('div');
-            card.className = 'partner-card-static';
-            const logoDiv = document.createElement('div');
-            logoDiv.className = 'partner-logo-static';
-            logoDiv.style.backgroundColor = colors[idx % colors.length];
-            logoDiv.textContent = partner.name.charAt(0).toUpperCase();
-            
-            const nameDiv = document.createElement('div');
-            nameDiv.className = 'partner-name-static';
-            nameDiv.textContent = partner.name;
-            
-            const descDiv = document.createElement('div');
-            descDiv.className = 'partner-desc-static';
-            descDiv.textContent = partner.desc;
-            
-            card.appendChild(logoDiv);
-            card.appendChild(nameDiv);
-            card.appendChild(descDiv);
-            return card;
-        }
-        
-        function initPartnersCarousel() {
-            partnersTrackEl.innerHTML = '';
-            partnersData.forEach((partner, idx) => {
-                partnersTrackEl.appendChild(createPartnerCard(partner, idx));
-            });
-            partnersData.forEach((partner, idx) => {
-                partnersTrackEl.appendChild(createPartnerCard(partner, idx + partnersData.length));
-            });
-        }
-        
-        initPartnersCarousel();
+            // Партнеры
+            const partners = [{ name:"БРВ Мебель", desc:"Белорусская мебель" },{ name:"К2 Мебель", desc:"Кухни и шкафы по индивидуальному проекту" },{ name:"Мебель Виват", desc:"Кухни и мебель на заказ" },{ name:"Глазов-мебель", desc:"Классическая и современная мебель" },{ name:"Ивару", desc:"Корпусная мебель от производителя" },{ name:"Мебельград", desc:"Мебельный гипермаркет" },{ name:"Натура Вера", desc:"Матрасы и мягкие кровати" },{ name:"Пинскдрев", desc:"Группа компаний мебели из Беларуси" },{ name:"Гомельдрев", desc:"Белорусская мебель из массива" },{ name:"Грин Мебель", desc:"Мебель из массива сосны" },{ name:"Корретто", desc:"Фабрика матрасов и кроватей" },{ name:"СРП", desc:"Обеденные группы - столы, стулья на металлокаркасе" }];
+            const trackP = document.getElementById('partnersTrack'), colors = ['#1a3b2e','#2a5a45','#3d7a5a','#5a9b6e','#4a7c5c','#3b6a4a','#2c5a3e','#1e4a32','#2a6a4a','#3e7a5a','#2e5a4a','#1e3e2e'];
+            partners.forEach((p,i)=>{ let c=document.createElement('div'); c.className='partner-card-static'; c.innerHTML = `<div class="partner-logo-static" style="background-color:${colors[i%colors.length]}">${p.name.charAt(0)}</div><div class="partner-name-static">${p.name}</div><div class="partner-desc-static">${p.desc}</div>`; trackP.appendChild(c); });
+            partners.forEach((p,i)=>{ let c=document.createElement('div'); c.className='partner-card-static'; c.innerHTML = `<div class="partner-logo-static" style="background-color:${colors[i%colors.length]}">${p.name.charAt(0)}</div><div class="partner-name-static">${p.name}</div><div class="partner-desc-static">${p.desc}</div>`; trackP.appendChild(c); });
+        })();
     </script>
 </body>
 </html>
